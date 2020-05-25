@@ -1,6 +1,15 @@
 <h1>index page</h1>
 
-<% @moods.each do |mood| %>
-  <%= mood.rating %>
-  <%= mood.activity_list %>
-<% end %>
+<div class="container">
+  <ul>
+    <% @moods.each do |mood| %>
+      <li>
+      Mood: <%= mood.rating %> |
+      Activity: <%= mood.activity_list %>
+      </li>
+    <% end %>
+  <ul>
+
+<%= link_to "Add mood", new_mood_path %>
+
+</div>
