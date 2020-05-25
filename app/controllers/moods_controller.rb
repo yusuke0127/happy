@@ -1,6 +1,7 @@
 class MoodsController < ApplicationController
   def index
-    @moods = policy_scope(Mood).order(created_at: :desc)
+    today = Date.today.beginning_of_day..Date.today.end_of_day
+    @moods = policy_scope(Mood).order(created_at: :desc).where(created_at: today)
     @average = current_user.average_mood(@moods)
   end
 
