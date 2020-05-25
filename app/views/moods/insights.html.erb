@@ -1,0 +1,7 @@
+<h1>Insights page</h1>
+
+<ul>
+<% @moods.each do |mood| %>
+  <li><%= mood.rating %> | <%= mood.activity_list %> </li>
+<% end %>
+</ul>

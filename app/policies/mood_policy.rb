@@ -5,5 +5,8 @@ class MoodPolicy < ApplicationPolicy
     end
   end
 
+  def insights?
+    scope.where(user: user)
+  end
 
 end

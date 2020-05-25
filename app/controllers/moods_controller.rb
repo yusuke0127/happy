@@ -13,5 +13,6 @@ class MoodsController < ApplicationController
   end
 
   def insights
+    @moods = policy_scope(Mood).order(created_at: :desc)
   end
 end
