@@ -1,5 +1,6 @@
 class MoodsController < ApplicationController
   def index
+    @moods = policy_scope(Mood).order(created_at: :desc)
   end
 
   def new
