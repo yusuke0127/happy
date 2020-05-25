@@ -7,6 +7,7 @@ class MoodPolicy < ApplicationPolicy
 
   def new?
     true
+  end
 
   def insights?
     scope.where(user: user)
