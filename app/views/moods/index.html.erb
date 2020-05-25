@@ -6,7 +6,7 @@
   <ul>
     <% @moods.each do |mood| %>
       <li>
-      <%= mood.created_at.strftime("%H:%M %p %z") %>
+      <%= mood.created_at.strftime("%D %H:%M %p %z") %>
       Mood: <%= mood.rating %> |
       Activity: <%= mood.activity_list %>
       </li>

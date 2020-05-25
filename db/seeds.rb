@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Clearing database..."
+Mood.destroy_all
 User.destroy_all
 
 # creating users
@@ -36,34 +37,46 @@ puts "Done creating yusuke"
 
 # creating moods
 
+activities = %w[family friends date party netflix reading gaming relax good-sleep bad-sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling]
+random_rating = [0, 1, 2, 3, 4]
+
 puts ""
 puts "Creating mood for pins"
-mood_1 = Mood.new(
-  rating: 4,
-  activity_list: "eating"
-)
-mood_1.user = pins
-mood_1.save!
+70.times do
+  mood_1 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at: (rand*10).days.ago
+  )
+  mood_1.user = pins
+  mood_1.save!
+end
 puts "Done creating mood for pins"
 
 puts ""
 puts "Creating mood for katsu"
-mood_2 = Mood.new(
-  rating: 3,
-  activity_list: "games"
-)
-mood_2.user = katsu
-mood_2.save!
+70.times do
+  mood_2 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at: (rand*10).days.ago
+  )
+  mood_2.user = katsu
+  mood_2.save!
+end
 puts "Done creating mood for katsu"
 
 puts ""
 puts "Creating mood for yusuke"
-mood_3 = Mood.new(
-  rating: 4,
-  activity_list: "running"
-)
-mood_3.user = yusuke
-mood_3.save!
+70.times do
+  mood_3 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at: (rand*10).days.ago
+  )
+  mood_3.user = yusuke
+  mood_3.save!
+end
 puts "Done creating mood for yusuke"
 
 
