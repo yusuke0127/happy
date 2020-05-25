@@ -4,4 +4,6 @@ class MoodPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+
 end
