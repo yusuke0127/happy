@@ -1,6 +1,10 @@
-<%= simple_form_for(@mood) do |f| %>
-  <%= f.label :rating %>
-  <%= f.select :rating, Mood.ratings.keys %>
-  <%= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
-  <%= f.submit %>
-<% end %>
+<div class="container mt-5 d-flex justify-content-center">
+
+  <%= simple_form_for(@mood) do |f| %>
+    <%= f.label :rating %>
+    <%= f.select :rating, Mood.ratings.keys %>
+    <%= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
