@@ -1,16 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <% if user_signed_in? %>
-    <%= link_to "#", class: "icon-color" do %>
+    <%= link_to moods_path, class: "icon-color" do %>
       <i class="fas fa-grin">Mood</i>
     <% end %>
 
 
-    <%= link_to "#", class: "icon-color" do %>
+    <%= link_to insights_path, class: "icon-color" do %>
       <i class="fas fa-chart-area">Insights</i>
     <% end %>
 
     <div class="circle-button">
-      <%= link_to "+", "#", class: "btn btn-ghost" %>
+      <%= link_to "+", new_mood_path, class: "btn btn-ghost" %>
 
     </div>
 
