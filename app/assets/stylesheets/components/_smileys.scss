@@ -173,7 +173,7 @@ svg {
   height: 10em;
 }
 
-svg.happy {
+svg.fab-3d {
 
   .face {
     animation: upAndDown 0.8s ease infinite;
@@ -186,7 +186,7 @@ svg.happy {
 
 }
 
-svg.sad {
+svg.sad-3d {
   width: 10em;
   height: 10em;
 
@@ -207,7 +207,7 @@ svg.sad {
   }
 }
 
-svg.neutral {
+svg.neutral-3d {
   .face {
     animation: upAndDown 6s ease infinite;
   }
@@ -225,7 +225,7 @@ svg.neutral {
   }
 }
 
-svg.fine {
+svg.happy-3d {
   .face-container {
     animation: rotateLeftToRight 3s infinite;
   }
