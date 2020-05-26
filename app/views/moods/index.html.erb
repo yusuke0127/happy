@@ -44,7 +44,11 @@
     <div class="card-product-infos">
       <h5><%= mood.created_at.strftime("%D %H:%M %p %z") %></h5>
       <h2><%= mood.rating %></h2>
-      <p class="activity-card"><%= mood.activity_list %></p>
+      <div class="tags">
+      <% mood.activity_list.each do |activity| %>
+        <p class="activity-card"><%= activity %></p>
+      <% end %>
+      </div>
     </div>
     <% case mood.rating %>
       <% when "awful" %>
