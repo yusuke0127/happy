@@ -17,7 +17,7 @@
     <% today = Date.today %>
     <p><%= today.at_beginning_of_week %> - <%= today.at_end_of_week %></p>
 
-    <div class="weekly-average-container">
+    <div class="average-container">
       <!-- sample -->
       <%#= column_chart({ Sun: 47, Mon: 42, Tue: 25, Wed: 20, Thu: 22, Fri: 20, Sat: 34}) %>
       <%#= column_chart({ 1st week: 47, 2nd week: 42, 3rd week: 25, 4th week: 20, 5th week: 20}) %>
@@ -41,6 +41,10 @@
   <div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
     <% today = Date.today %>
     <p><%= today.at_beginning_of_month %> - <%= today.at_end_of_month %></p>
+
+    <div class="average-container">
+      <%= column_chart(@month_hash) %>
+    </div>
 
     <div class="top-activities-container">
       <h1>Top Monthly Activities</h1>
