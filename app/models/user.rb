@@ -37,12 +37,17 @@ class User < ApplicationRecord
       average_mood_for(Date.today - number)
     end.reverse
   end
-  
+
   def week_average_mood
-    (Date.today.beginning_of_week..Date.today.end_of_week).to_a.map do |date|
-      days_mood = moods.where(created_at: date.beginning_of_day..date.end_of_day)
-      average_mood(days_mood)
+    this_week = (Date.today.beginning_of_week..Date.today.end_of_week).to_a
+    this_week.map do |date|
+      average_mood_for(date)
     end
+
+    # (Date.today.beginning_of_week..Date.today.end_of_week).to_a.map do |date|
+    #   days_mood = moods.where(created_at: date.beginning_of_day..date.end_of_day)
+    #   average_mood(days_mood)
+    # end
   end
-    
+
 end
