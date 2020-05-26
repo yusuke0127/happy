@@ -29,6 +29,7 @@ class MoodsController < ApplicationController
 
   def insights
     @moods = policy_scope(Mood).order(created_at: :desc)
+    # @weeks = @moods.where(created_at: )
   end
 
   private
