@@ -2,9 +2,12 @@ class MoodsController < ApplicationController
   def index
     today = Date.today.beginning_of_day..Date.today.end_of_day
     @moods = policy_scope(Mood).order(created_at: :desc).where(created_at: today)
-    @average = current_user.average_mood(@moods)
-    @week_moods = current_user.daily_average_mood
-    @streak_days = current_user.one_week_mood.to_a
+    # average for today
+    @average = current_user.average_mood_for(Date.today)
+    # weekly average mood
+    @week_moods = current_user.weekly_average_moods
+    # 7 days ago
+    @streak_days = current_user.one_week_mood
   end
 
   def new
