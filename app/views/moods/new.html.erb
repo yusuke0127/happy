@@ -1,10 +1,44 @@
 <div class="container mt-5 d-flex justify-content-center">
 
+  <%#= simple_form_for(@mood) do |f| %>
+    <%#= f.label :rating %>
+    <%#= f.select :rating, Mood.ratings.keys %>
+    <%#= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
+    <%#= f.submit %>
+  <%# end %>
+
+
   <%= simple_form_for(@mood) do |f| %>
-    <%= f.label :rating %>
-    <%= f.select :rating, Mood.ratings.keys %>
-    <%= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
+    <%#= f.label :rating %>
+    <%#= f.input :rating, as: :radio_buttons, collection: Mood.ratings.keys %>
+    <div id="smiley-container">
+      <%= f.input :rating,
+        as: :radio_buttons,
+        collection: Mood.ratings.keys.map { |rating| [rating, "<div class='#{rating}'></div>".html_safe] },
+        label_method: :second,
+        value_method: :first,
+        # collection: Mood.ratings.map { |index| [index, "<div class='#{Mood.ratings.keys[index[1]]}'></div>"] },
+        # label_method: -> (item) { item.last.html_safe },
+        # value_method: :first,
+        wrapper: :vertical_collection_inline
+      %>
+
+    </div>
+    <%= f.input :activity_list,
+      as: :check_boxes,
+      collection: Mood.activities,
+      wrapper: :vertical_collection_inline
+      %>
     <%= f.submit %>
   <% end %>
-
 </div>
+
+
+<%#= simple_form_for @mood do |f| %>
+  <%#= f.input :rating,
+    as: :radio_buttons,
+    collection: Mood.ratings.map { |index| [index, "<div class='#{Mood.ratings.keys[index]}'></div>".html_safe] },
+    label_method: :second,
+    value_method: :first
+  %>
+<%# end %>
