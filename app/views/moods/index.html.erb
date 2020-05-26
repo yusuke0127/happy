@@ -1,8 +1,34 @@
   <h1>Mood</h1>
   <h4>Today you are feeling: <%= @average %></h4>
+  <h4>7 days ago: </h4>
 
+  <div class="d-flex justify-content-center align-items-center container">
+    <% n = 0 %>
+    <% @week_moods.each do |day_mood| %>
+      <button class="neu circle">
+        <p><%= @streak_days[n].strftime("%a") %></p>
+        <p><strong><%= @streak_days[n].strftime("%d") %></strong></p>
+        <% case day_mood %>
+        <% when "awful" %>
+          <i class="far fa-sad-cry"></i>
+        <% when "meh" %>
+          <i class="far fa-meh"></i>
+        <% when "neutral" %>
+          <i class="far fa-smile"></i>
+        <% when "happy" %>
+          <i class="far fa-laugh-beam"></i>
+        <% when "fabulous" %>
+          <i class="far fa-grin-hearts"></i>
+        <% else %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </button>
+      <% n += 1 %>
+    <% end %>
+  </div>
 
   <ul>
+    <h4>Mood Entries</h4>
     <% @moods.each do |mood| %>
       <li>
       <%= mood.created_at.strftime("%D %H:%M %p %z") %>
@@ -10,7 +36,7 @@
       Activity: <%= mood.activity_list %>
       </li>
     <% end %>
-  <ul>
+  </ul>
 
 <%= link_to "Add mood", new_mood_path %>
 

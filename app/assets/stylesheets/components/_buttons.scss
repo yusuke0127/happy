@@ -55,3 +55,34 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+// buttons on index page
+
+.neu {
+  margin: 20px;
+  font-size: 25px;
+  // font-size: 2em;
+  color: #A5A7AC;
+  background: #F5F7FC;
+  padding: 20px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15),
+              -5px -5px 10px rgba(255,255,255,0.85);
+  transition: all 0.5s ease 0s;
+}
+
+.neu:hover {
+  color: #95979C;
+  background: #F0F2F7;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.05),
+              -5px -5px 5px rgba(255,255,255,0.5),
+              5px 5px 5px inset rgba(0,0,0,0.05),
+              -5px -5px 5px inset rgba(255,255,255,0.5);
+}
+
+.circle{
+  border-radius: 150px;
+  width: 15vh;
+  height: 28vh;
+}
