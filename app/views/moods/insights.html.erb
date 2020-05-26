@@ -20,9 +20,14 @@
     </div>
 
     <div class="top-activities-container">
-      <h1>Top Weekly Acticities</h1>
+      <h1>Top Weekly Activities</h1>
       <div class="cards-container">
-
+        <% @week_activities_count.each do |activity|%>
+          <div class="activity-card">
+            <div><p><%=  activity[0]%></p></div>
+            <div><p><%= activity[1]  %>times</p></div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -32,13 +37,41 @@
     <% today = Date.today %>
     <p><%= today.at_beginning_of_month %> - <%= today.at_end_of_month %></p>
 
+    <div class="top-activities-container">
+      <h1>Top Monthly Activities</h1>
+      <div class="cards-container">
+        <% @month_activities_count.each do |activity|%>
+          <div class="activity-card">
+            <div><p><%=  activity[0]%></p></div>
+            <div><p><%= activity[1]  %>times</p></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
   <!-- year content -->
   <div class="tab-pane fade" id="pills-year" role="tabpanel" aria-labelledby="pills-year-tab">
     <% today = Date.today %>
     <p><%= today.year %></p>
+
+    <div class="top-activities-container">
+      <h1>Top Yearly Activities</h1>
+      <div class="cards-container">
+        <% @year_activities_count.each do |activity|%>
+          <div class="activity-card">
+            <div><p><%=  activity[0]%></p></div>
+            <div><p><%= activity[1]  %>times</p></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
   </div>
+
+
 </div>
 
 
@@ -47,10 +80,6 @@
 
 
 
-<ul>
-<% @moods.each do |mood| %>
-  <li><%= mood.created_at %> | <%= mood.rating %> | <%= mood.activity_list %> </li>
-<% end %>
-</ul>
+
 
 
