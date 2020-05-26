@@ -16,7 +16,11 @@
   <div class="tab-pane fade show active" id="pills-week" role="tabpanel" aria-labelledby="pills-week-tab">
     <% today = Date.today %>
     <p><%= today.at_beginning_of_week %> - <%= today.at_end_of_week %></p>
+
     <div class="weekly-average-container">
+      <!-- sample -->
+      <%#= column_chart({ Sun: 47, Mon: 42, Tue: 25, Wed: 20, Thu: 22, Fri: 20, Sat: 34}) %>
+      <%= column_chart(@week_hash) %>
     </div>
 
     <div class="top-activities-container">
