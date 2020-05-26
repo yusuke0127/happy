@@ -28,12 +28,27 @@ class MoodsController < ApplicationController
   end
 
   def insights
+    # ActsAsTaggableOn::Tag.most_used(10)
     @moods = policy_scope(Mood).order(created_at: :desc)
+
+
+    @week_activities_count = activity_frequency(Date.today.beginning_of_week..Date.today.end_of_week).first(10)
+    @month_activities_count = activity_frequency(Date.today.beginning_of_month..Date.today.end_of_month).first(10)
+    @year_activities_count = activity_frequency(Date.today.beginning_of_year..Date.today.end_of_year).first(10)
+
   end
 
   private
 
   def mood_params
     params.require(:mood).permit(:rating, activity_list: [])
+  end
+
+  def activity_frequency(period)
+    month = @moods.where(created_at: period)
+    month_activities = month.map {|mood| mood.activity_list }.flatten
+    activities_count = Hash.new(0)
+    month_activities.each { |activity| activities_count[activity] += 1 }
+    activities_count.sort_by {|activity, count| count}.reverse
   end
 end

@@ -13,11 +13,6 @@ class MoodPolicy < ApplicationPolicy
     record.any? ? record.first.user == user : true
   end
 
-
-  def insights?
-    scope.where(user: user)
-  end
-
   def create?
     true
   end
