@@ -29,14 +29,15 @@ gem 'redis', '~> 4.0'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'devise'
-gem 'pundit'
-gem "chartkick"
-gem 'groupdate'
-
 gem 'autoprefixer-rails'
+gem "chartkick"
+gem 'devise'
 gem 'font-awesome-sass'
+gem 'groupdate'
+gem 'pundit'
+gem "simple_calendar", "~> 2.0"
 gem 'simple_form'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
