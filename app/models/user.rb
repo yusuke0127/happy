@@ -38,8 +38,8 @@ class User < ApplicationRecord
     end.reverse
   end
 
-  def week_average_mood
-    this_week = (Date.today.beginning_of_week..Date.today.end_of_week).to_a
+  def week_average_mood(week_period)
+    this_week = (week_period).to_a
     this_week.map do |date|
       average_mood_for(date)
     end

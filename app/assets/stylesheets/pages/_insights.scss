@@ -1,6 +1,8 @@
 .cards-container {
   background-color: white;
-  padding: 24px;
+  padding: 8px;
+  margin-top: 16px;
+
 }
 
 .activity-card {
@@ -16,5 +18,16 @@
   p {
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.tab-pane {
+  text-align: left;
+  p {
+    text-align: center;
   }
 }
