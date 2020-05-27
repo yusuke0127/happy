@@ -21,6 +21,9 @@ class MoodsController < ApplicationController
     authorize @mood
   end
 
+  def new_tag
+    raise
+  end
   def create
     @mood = Mood.new(mood_params)
     @mood.user = current_user
