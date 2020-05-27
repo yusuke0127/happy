@@ -23,7 +23,8 @@
       <%#= column_chart({ Sun: 47, Mon: 42, Tue: 25, Wed: 20, Thu: 22, Fri: 20, Sat: 34}) %>
       <%#= column_chart({ 1st week: 47, 2nd week: 42, 3rd week: 25, 4th week: 20, 5th week: 20}) %>
       <%#= column_chart({ jan: 47, feb: 42, 3rd week: 25, 4th week: 20, 5th week: 20}) %>
-      <%= column_chart(@week_hash) %>
+      <%= column_chart(@week_hash, colors: ["#E67E22", "#E67E22"])%>
+
     </div>
 
     <div class="top-activities-container">
@@ -49,7 +50,7 @@
 
 
     <div class="average-container">
-      <%= column_chart(@month_hash) %>
+      <%= column_chart(@month_hash, colors: ["#E67E22", "#E67E22"]) %>
     </div>
 
     <div class="top-activities-container">
@@ -74,7 +75,7 @@
 
 
     <div class="average-container">
-      <%= column_chart(@year_hash) %>
+      <%= column_chart(@year_hash, colors: ["#E67E22", "#E67E22"]) %>
     </div>
 
     <div class="top-activities-container">
