@@ -143,13 +143,17 @@
       <%= f.submit %>
     <% end %>
     <script>
-      // function classToggle() {
-      // console.log('Working')
-      // console.log(this)
-      // this.classList.toggle('active')
-      //     }
+      function classToggle() {
+      console.log('Working')
+      console.log(this)
+      this.classList.toggle('active')
+          }
       
-      //     document.querySelector('.awful-3d').addEventListener('click', classToggle);
+      document.querySelector('.awful-3d').addEventListener('click', classToggle);
+      document.querySelector('.meh-3d').addEventListener('click', classToggle);
+      document.querySelector('.neutral-3d').addEventListener('click', classToggle);
+      document.querySelector('.happy-3d').addEventListener('click', classToggle);
+      document.querySelector('.fab-3d').addEventListener('click', classToggle);
     </script>
     <%#= simple_form_for @mood do |f| %>
       <%#= f.input :rating,

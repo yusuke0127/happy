@@ -174,20 +174,32 @@ svg {
   height: 3em;
 }
 
-svg.fab-3d {
+
+
+svg.awful-3d {
+  width: 3em;
+  height: 3em;
   opacity: 0.8;
+
   .face {
-    animation: upAndDown 0.8s ease infinite;
+    animation: upAndDown 0.9s linear infinite alternate-reverse;
   }
 
-  .scaleFace {
-    transform-origin: 35px 20px;
-    transform: rotate(12deg);
+  .left-eye, .right-eye {
+    opacity: 1;
+    transform-origin: 1 2px;
+    // animation:
+    //   blink 3s linear infinite,
+    //   blinkSqueeze 3s linear infinite;
   }
-  &:hover {
+
+//   .mouth {
+//     padding-top: 20px;
+//   }
+  &:hover{
     opacity: 1;
     cursor: pointer;
-    animation: none;
+
   }
   &.active {
     opacity: 1;
@@ -229,38 +241,6 @@ svg.meh-3d {
   }
   &.active .left-eye, .right-eye{
     animation: none;
-  }
-}
-svg.awful-3d {
-  width: 3em;
-  height: 3em;
-  opacity: 0.8;
-
-  .face {
-    animation: upAndDown 0.9s linear infinite alternate-reverse;
-  }
-
-  .left-eye, .right-eye {
-    opacity: 1;
-    transform-origin: 1 2px;
-    // animation:
-    //   blink 3s linear infinite,
-    //   blinkSqueeze 3s linear infinite;
-  }
-
-//   .mouth {
-//     padding-top: 20px;
-//   }
-  &:hover{
-    opacity: 1;
-    cursor: pointer;
-
-  }
-  &.active {
-    opacity: 1;
-  }
-  &.active .face{
-    animation:none;
   }
 }
 svg.neutral-3d {
@@ -335,6 +315,33 @@ svg.happy-3d {
     animation:none;
   }
 }
+
+svg.fab-3d {
+  opacity: 0.8;
+  .face {
+    animation: upAndDown 0.8s ease infinite;
+  }
+
+  .scaleFace {
+    transform-origin: 35px 20px;
+    transform: rotate(12deg);
+  }
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    animation: none;
+  }
+  &.active {
+    opacity: 1;
+    .face {
+      animation: none
+    }
+  }
+  // &.active .face{
+  //   animation:none;
+  // }
+}
+
 
 @keyframes rotateLeftToRight {
   0% { transform: rotate(15deg); }
