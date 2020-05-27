@@ -10,6 +10,10 @@ class MoodsController < ApplicationController
     @streak_days = current_user.one_week_mood
   end
 
+  def calendar
+    @moods = policy_scope(Mood)
+  end
+
   def new
     @mood = Mood.new
     authorize @mood
