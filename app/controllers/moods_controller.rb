@@ -40,6 +40,10 @@ class MoodsController < ApplicationController
 
     @week_hash = create_week_hash(Date.today.beginning_of_week..Date.today.end_of_week)
     @month_hash = create_month_hash(Date.today.beginning_of_month..Date.today.end_of_month)
+
+
+    @year_hash = create_year_hash(Date.today - 1.year, Date.today)
+
   end
 
   private
@@ -56,10 +60,10 @@ class MoodsController < ApplicationController
     activities_count.sort_by {|activity, count| count}.reverse
   end
 
-  def create_week_hash(period)
+  def create_week_hash(period) ####
     hash = {}
     week = (period).to_a  #[Mon]
-    week_moods = current_user.week_average_mood
+    week_moods = current_user.week_average_mood(period)
     week.each_with_index do |date, index|
       if Mood.ratings[week_moods[index]].nil?
         hash[date.strftime("%a")] = 0
@@ -99,8 +103,22 @@ class MoodsController < ApplicationController
     return hash
   end
 
-  def  create_year_hash
-
+  def create_year_hash(start_date, end_date)
+    hash = {}
+    first_days = []
+    next_month = start_date
+    until next_month > end_date
+      first_days << Date.new(next_month.year, next_month.month)
+      next_month += 1.month
+    end
+    periods = first_days.map do |first_of_month|
+      first_of_month..first_of_month.end_of_month
+    end
+    periods.each do |period|
+      average = create_week_hash(period).values.sum/7.0.round
+      hash[Date::MONTHNAMES[period.first.month]] = average
+    end
+    hash
   end
 
 
