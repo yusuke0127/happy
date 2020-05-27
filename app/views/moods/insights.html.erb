@@ -30,8 +30,7 @@
       <div class="cards-container">
         <h4>Top 5 Weekly Activities</h4>
         <% @week_activities_count.each do |activity|%>
-          <div class="activity-card color-<%= (1..10).to_a.sample  %>">
-            <%= "color-#{(1..10).to_a.sample}"  %>
+          <div class="activity-card color-<%= (1..5).to_a.sample  %>">
             <div>
               <p><%=  activity[0]%></p>
             </div>
@@ -55,7 +54,7 @@
       <div class="cards-container">
         <h4>Top 5 Monthly Activities</h4>
         <% @month_activities_count.each do |activity|%>
-          <div class="activity-card">
+          <div class="activity-card color-<%= (1..5).to_a.sample  %>">
             <div>
               <p><%=  activity[0]%></p>
             </div>
@@ -78,7 +77,7 @@
       <div class="cards-container">
         <h4>Top 5 Yearly Activities</h4>
         <% @year_activities_count.each do |activity|%>
-          <div class="activity-card">
+          <div class="activity-card color-<%= (1..5).to_a.sample  %>">
             <div>
               <p><%=  activity[0]%></p>
             </div>
