@@ -1,4 +1,6 @@
 class MoodsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
+
   def index
     today = Date.today.beginning_of_day..Date.today.end_of_day
     @moods = policy_scope(Mood).order(created_at: :desc).where(created_at: today)
@@ -17,7 +19,6 @@ class MoodsController < ApplicationController
   def new
     @mood = Mood.new
     authorize @mood
-
   end
 
   def create
