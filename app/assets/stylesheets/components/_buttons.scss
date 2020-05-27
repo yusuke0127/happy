@@ -60,10 +60,10 @@
 
 .neu {
   margin: 12px;
-  font-size: 12px;
+  font-size: 14px;
   // font-size: 2em;
   color: #A5A7AC;
-  background: #ecf0f1;
+  background: #eff6fc;
   // background: #F5F7FC;
   // padding: 20px;
   border-radius: 10px;
@@ -71,11 +71,18 @@
   box-shadow: 5px 5px 10px rgba(0,0,0,0.15),
               -5px -5px 10px rgba(255,255,255,0.85);
   transition: all 0.5s ease 0s;
+  p.small-text {
+    font-size: 10px;
+  }
+  i {
+    font-size: 16px;
+  }
 }
 
 .neu:hover {
   color: #95979C;
-  background: #e1eaed;
+  background: #e4f1fe;
+  // background: #e1eaed;
   // background: #F0F2F7;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.05),
               -5px -5px 5px rgba(255,255,255,0.5),
@@ -93,4 +100,57 @@ button.neu.circle {
   p {
     margin-bottom: 2px;
   }
+}
+
+.calendar-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  a {
+    background: #eff6fc;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #A5A7AC;
+    font-size: 12px;
+    padding: 0 12px;
+    height: 25px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15),
+              -5px -5px 10px rgba(255,255,255,0.85);
+    transition: all 0.5s ease 0s;
+  &:hover {
+    color: #95979C;
+    background: #e4f1fe;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.05),
+              -5px -5px 5px rgba(255,255,255,0.5),
+              5px 5px 5px inset rgba(0,0,0,0.05),
+              -5px -5px 5px inset rgba(255,255,255,0.5);
+  }
+  }
+  p {
+    margin-bottom: 2px;
+    margin-top: 3px;
+  }
+  i {
+    margin-left: 2px;
+  }
+}
+
+i.far.fa-laugh-beam {
+  color: $blue;
+}
+
+i.far.fa-smile {
+  color: $yellow;
+}
+
+i.far.fa-sad-cry {
+  color: $purple;
+}
+
+i.far.fa-meh {
+  color: $red;
+}
+
+i.far.fa-grin-hearts {
+  color: $green;
 }
