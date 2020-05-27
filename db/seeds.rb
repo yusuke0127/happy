@@ -10,6 +10,7 @@ puts "Clearing database..."
 Mood.destroy_all
 User.destroy_all
 
+
 # creating users
 
 puts "Creating pins"
@@ -37,16 +38,16 @@ puts "Done creating yusuke"
 
 # creating moods
 
-activities = %w[family friends date party netflix reading gaming relax good-sleep bad-sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling]
+activities = %w[family friends date party netflix reading gaming relax sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling hobbies sick movie TV arguement social\ media sex]
 random_rating = [0, 1, 2, 3, 4]
 
 puts ""
 puts "Creating mood for pins"
-70.times do
+840.times do
   mood_1 = Mood.new(
     rating: random_rating.sample,
     activity_list: activities.sample,
-    created_at: (rand*10).days.ago
+    created_at: (rand*120).days.ago
   )
   mood_1.user = pins
   mood_1.save!
@@ -55,11 +56,11 @@ puts "Done creating mood for pins"
 
 puts ""
 puts "Creating mood for katsu"
-70.times do
+840.times do
   mood_2 = Mood.new(
     rating: random_rating.sample,
     activity_list: activities.sample,
-    created_at: (rand*10).days.ago
+    created_at: (rand*120).days.ago
   )
   mood_2.user = katsu
   mood_2.save!
@@ -68,11 +69,11 @@ puts "Done creating mood for katsu"
 
 puts ""
 puts "Creating mood for yusuke"
-70.times do
+840.times do
   mood_3 = Mood.new(
     rating: random_rating.sample,
     activity_list: activities.sample,
-    created_at: (rand*10).days.ago
+    created_at: (rand*120).days.ago
   )
   mood_3.user = yusuke
   mood_3.save!
