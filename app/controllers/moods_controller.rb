@@ -13,6 +13,7 @@ class MoodsController < ApplicationController
   def new
     @mood = Mood.new
     authorize @mood
+
   end
 
   def create
