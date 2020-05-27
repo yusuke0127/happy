@@ -1,38 +1,45 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-bottom">
   <% if user_signed_in? %>
-    <%= link_to moods_path, class: "icon-color" do %>
-      <i class="fas fa-grin">Mood</i>
+    <%= link_to moods_path, class: "icon-color #{'icon-color-active' if params[:controller] == 'moods' && params[:action] == 'index'}" do %>
+      <i class="far fa-clipboard"></i>
     <% end %>
-
-
-    <%= link_to insights_path, class: "icon-color" do %>
-      <i class="fas fa-chart-area">Insights</i>
+    <%= link_to insights_path, class: "icon-color #{'icon-color-active' if params[:controller] == 'moods' && params[:action] == 'insights'}" do %>
+      <i class="far fa-chart-bar"></i>
     <% end %>
-
-    <div class="circle-button">
-      <%= link_to "+", new_mood_path, class: "btn btn-ghost" %>
-
-    </div>
-
+    <%= link_to new_mood_path, class: "icon-color #{'icon-color-active' if params[:controller] == 'moods' && params[:action] == 'new'}" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
     <%= link_to "#", class: "icon-color" do %>
-      <i class="fas fa-book">logs</i>
+      <i class="far fa-comment-dots"></i>
     <% end %>
-
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!--   <div class="circle-button">
+      <%#= link_to "+", new_mood_path, class: "btn btn-ghost" %>
+    </div> -->
+    <div class="dropup">
+      <%= link_to "user", class: "icon-color", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+        <i class="far fa-user"></i>
+      <% end %>
+      <div class="dropdown-menu">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </div>
+    </div>
+  <% end %>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </button> -->
+  <!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropup">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       </ul>
     </div>
-  <% else %>
-    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-  <% end %>
+  <%# else %>
+    <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <%# end %> -->
 </div>

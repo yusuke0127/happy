@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-around;
-  background: white;
+  background: lightgray;
+  height: 8vh;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,4 +16,11 @@
 .navbar-lewagon .icon-color {
   width: 40px;
   color: #747474;
+  display: inline-grid;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar-lewagon .icon-color-active {
+  color: black;
 }

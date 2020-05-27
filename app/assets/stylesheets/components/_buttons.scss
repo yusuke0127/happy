@@ -59,13 +59,13 @@
 // buttons on index page
 
 .neu {
-  margin: 20px;
-  font-size: 25px;
+  margin: 12px;
+  font-size: 12px;
   // font-size: 2em;
   color: #A5A7AC;
   background: #ecf0f1;
   // background: #F5F7FC;
-  padding: 20px;
+  // padding: 20px;
   border-radius: 10px;
   border: 0;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.15),
@@ -83,12 +83,14 @@
               -5px -5px 5px inset rgba(255,255,255,0.5);
 }
 
-.circle {
-  border-radius: 150px;
-  width: 15vh;
-  height: 28vh;
-}
 
 button.neu.circle {
+  border-radius: 40px;
   position: relative;
+  margin: 6px auto;
+  width: 6vh;
+  height: 12vh;
+  p {
+    margin-bottom: 2px;
+  }
 }
