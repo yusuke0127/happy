@@ -34,9 +34,9 @@ class MoodsController < ApplicationController
 
   def insights
     @moods = policy_scope(Mood).order(created_at: :desc)
-    @week_activities_count = activity_frequency(Date.today.beginning_of_week..Date.today.end_of_week).first(10)
-    @month_activities_count = activity_frequency(Date.today.beginning_of_month..Date.today.end_of_month).first(10)
-    @year_activities_count = activity_frequency(Date.today.beginning_of_year..Date.today.end_of_year).first(10)
+    @week_activities_count = activity_frequency(Date.today.beginning_of_week..Date.today.end_of_week).first(5)
+    @month_activities_count = activity_frequency(Date.today.beginning_of_month..Date.today.end_of_month).first(5)
+    @year_activities_count = activity_frequency(Date.today.beginning_of_year..Date.today.end_of_year).first(5)
 
     @week_hash = create_week_hash(Date.today.beginning_of_week..Date.today.end_of_week)
     @month_hash = create_month_hash(Date.today.beginning_of_month..Date.today.end_of_month)
