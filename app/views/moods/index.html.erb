@@ -1,6 +1,7 @@
 <h1 style="font-weight: 700;">Mood</h1>
 <p>Today you are feeling: <em><%= @average %></em></p>
 <h3 style="font-weight: 600;">Past 7 days</h3>
+<%= link_to "Calendar", calendar_moods_path %>
 <div class="container-mood">
   <% @week_moods.each_with_index do |day_mood, index| %>
     <button class="neu circle">

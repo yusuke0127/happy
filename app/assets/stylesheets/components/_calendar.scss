@@ -1,0 +1,26 @@
+div.calendar-heading {
+  text-align: center;
+  margin: 12px;
+  a {
+    text-decoration: none;
+    color: black;
+    content: ">";
+  }
+}
+
+span.calendar-title {
+  margin: 0 5px;
+}
+
+.number-emoji-calendar {
+  display: grid;
+  text-align: center;
+}
+
+table.table.table-striped {
+  margin: 0 auto;
+}
+
+div.simple-calendar {
+  margin: 0 auto;
+}

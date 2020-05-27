@@ -1,0 +1,6 @@
+<%= month_calendar do |date| %>
+  <div class="number-emoji-calendar">
+    <%= date.day %>
+    <i class="<%= mood_fontawesome(current_user.average_mood_for(date)) %> mt-2"></i>
+  </div>
+<% end %>
