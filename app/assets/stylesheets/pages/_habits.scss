@@ -1,0 +1,80 @@
+.bad-habit-img {
+  width: 330px;
+  height: 140px;
+  object-fit: cover;
+  margin: 23px;
+  margin-top: 4px;
+}
+
+.title-habits h4 {
+  margin: 23px;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.happy-habits h4 {
+  margin: 23px;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-position: under;
+  margin-top: -8px;
+}
+
+.happy-habits p {
+  margin: 8px 23px;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.progress {
+  width: 330px;
+  margin: 8px auto;
+}
+
+.last-week {
+  margin: 0px 24px;
+  background-color: #eff6fc;
+  text-align: center;
+  padding: 8px 12px;
+  display: flex;
+  border-radius: 12px;
+  align-items: center;
+  width: 130px;
+  margin-bottom: 10px;
+  p {
+    margin: 4px;
+    font-size: 14px;
+    color: #A5A7AC;
+  }
+  i {
+    font-size: 24px;
+    margin-left: 4px;
+  }
+}
+
+.this-week {
+  margin: 0px 24px;
+  background-color: #eff6fc;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  width: 130px;
+  p {
+    margin: 4px;
+    font-size: 14px;
+    color: #A5A7AC;
+  }
+  i {
+    font-size: 24px;
+    margin-left: 4px;
+  }
+}
+
+.compare-weeks {
+  display: grid;
+}
