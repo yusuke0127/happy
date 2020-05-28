@@ -3,7 +3,7 @@ class MoodsController < ApplicationController
 
   def index
     today = Date.today.beginning_of_day..Date.today.end_of_day
-    @moods = policy_scope(Mood).order(created_at: :desc).where(created_at: today)
+    @moods = policy_scope(Mood).order(created_at: :desc).includes([:taggings]).where(created_at: today)
     # average for today
     @average = current_user.average_mood_for(Date.today)
     # weekly average mood
@@ -16,17 +16,33 @@ class MoodsController < ApplicationController
     @moods = policy_scope(Mood)
   end
 
-  # new form
-  # pass mood.rating as params with link to
-  # select activities
-  # create an instance with the mood and activity
+    
   def new_smiley
-    @mood = Mood.new
-    @rating = params[:rating]
-    authorize @mood
+   @mood = Mood.new	    
+   @rating = params[:rating]
+   authorize @mood	   
   end
 
+  def habits
+    fab_moods = policy_scope(Mood).includes(:taggings).where(rating: "fabulous")
+    activities = fab_moods.map { |mood| mood.activity_list }.flatten
+    @activity_frequency = frequency(activities)
 
+    awful_moods = policy_scope(Mood).includes(:taggings).where(rating: "awful")
+    bad_activities = awful_moods.map { |mood| mood.activity_list }.flatten
+    @bad_activity_frequency = frequency(bad_activities)
+
+    this_week = Date.today.beginning_of_week..Date.today.end_of_week
+    last_week = (Date.today - 6).beginning_of_week..(Date.today - 6).end_of_week
+
+    average_moods_current_week = current_user.moods.where(created_at: (this_week)).average(:rating).round
+    @this_week_mood = Mood.ratings.keys[average_moods_current_week]
+
+    average_moods_last_week = current_user.moods.where(created_at: (last_week)).average(:rating).round
+    @last_week_mood = Mood.ratings.keys[average_moods_last_week]
+  end
+
+ 
   def new
     # @rating = params.has_key?(:rating) ? params[:rating]
     @mood = Mood.new(rating: params[:rating])
@@ -47,12 +63,12 @@ class MoodsController < ApplicationController
 
   def show
     today = Date.parse params[:date]
-    @moods = current_user.moods.where(created_at: today.beginning_of_day..today.end_of_day)
+    @moods = current_user.moods.where(created_at: today.beginning_of_day..today.end_of_day).order(created_at: :asc).includes([:taggings])
     authorize @moods
   end
 
   def insights
-    @moods = policy_scope(Mood).order(created_at: :desc)
+    @moods = policy_scope(Mood).order(created_at: :desc).includes([:taggings])
     @week_activities_count = activity_frequency(Date.today.beginning_of_week..Date.today.end_of_week).first(5)
     @month_activities_count = activity_frequency(Date.today.beginning_of_month..Date.today.end_of_month).first(5)
     @year_activities_count = activity_frequency(Date.today.beginning_of_year..Date.today.end_of_year).first(5)
@@ -140,5 +156,12 @@ class MoodsController < ApplicationController
     hash
   end
 
+  def frequency(array)
+    result = Hash.new(0)
+    array.each do |item|
+      result[item] += 1
+    end
+    return result.sort_by { |activity, count| count }.reverse
+  end
 
 end
