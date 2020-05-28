@@ -1,0 +1,62 @@
+.form-container {
+  margin: 20px;
+  padding-top: 48px;
+  text-align: center;
+
+  // left: 50%;
+  // top: 50%;
+  // position: absolute;
+  // transform: translate(-50%, -50%);
+  .form-check-input {
+    display: none;
+  }
+
+  .activity-list {
+    // border: 1px solid black;
+  }
+
+  .activity-pill {
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+  }
+  .form-check-label {
+    border: 1px solid #4A4A4A;
+    color: #4A4A4A;
+    opacity: 0.4;
+    border-radius: 24px;
+    padding: 4px 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+
+  }
+.form-text-activity {
+  h2 {
+    font-weight: lighter;
+    font-size: 32px;
+  }
+}
+}
+.form-btn-container {
+    margin-top: 20px;
+  .form-btn {
+    border: 1px solid #98d3d6;
+    border-radius: 24px;
+    background-color: #98d3d6;
+    padding: 4px 12px;
+    color: white;
+  }
+}
+
+.smiley-form-container {
+  text-align: center;
+  padding-top: 200px;
+  .smiley-form-text {
+    margin: 24px;
+    padding-bottom: 32px;
+
+  }
+  h2 {
+    font-weight: lighter;
+  }
+}
