@@ -16,7 +16,7 @@
     <!-- week content -->
     <div class="tab-pane fade show active" id="pills-week" role="tabpanel" aria-labelledby="pills-week-tab">
       <% today = Date.today %>
-      <p><%= today.at_beginning_of_week %> - <%= today.at_end_of_week %></p>
+      <p><%= today.at_beginning_of_week.strftime("%b %e %Y") %> - <%= today.at_end_of_week.strftime("%b %e %Y") %></p>
       <h4>This Week Moods</h4>
       <div class="average-container">
         <!-- sample -->
@@ -45,7 +45,7 @@
     <!-- month content -->
     <div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
       <% today = Date.today %>
-      <p><%= today.at_beginning_of_month %> - <%= today.at_end_of_month %></p>
+      <p><%= today.at_beginning_of_month.strftime("%b %e %Y") %> - <%= today.at_end_of_month.strftime("%b %e %Y") %></p>
       <h4>This Month Moods</h4>
       <div class="average-container">
         <%= column_chart(@month_hash, colors: ["#E67E22", "#E67E22"]) %>
