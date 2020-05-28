@@ -144,15 +144,30 @@
     <%#= link_to new_mood_path(rating: )  %>
     <%#= @mood %>
     <%#= @mood.rating.nil? %>
-    <%= simple_form_for(@mood) do |f| %>
-      <%= f.input :rating, as: :hidden, collection: Mood.ratings.keys %>
-      <%= f.input :activity_list,
-          as: :check_boxes,
-          collection: Mood.activities,
-          wrapper: :vertical_collection_inline
-          %>
-      <%= f.submit %>
-    <% end %>
+    <div class="form-container">
+      <div class="form-text-activity">
+        <h2>
+          What have you've been doing?
+        </h2>
+      </div>
+      <%= simple_form_for(@mood) do |f| %>
+        <%= f.input :rating, as: :hidden, collection: Mood.ratings.keys %>
+        <div class="activity-list">
+          <div class="activity-pill">
+            <%= f.input :activity_list,
+                as: :check_boxes,
+                label: false,
+                collection: Mood.activities,
+                wrapper: :vertical_collection_inline,
+                label: ""
+                %>
+          </div>
+          <div class="form-btn-container">
+            <%= f.submit class: "form-btn"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <script>
       function classToggle() {
       console.log('Working')
