@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get '/moods/calendar', to: 'moods#calendar', as: :calendar_moods
   get '/moods/:date', to: 'moods#show', as: :date_moods
   get '/insights', to: 'moods#insights', as: :insights
-  get '/moods/new/smiley', to: 'moods#new_smiley', as: :new__smiley_mood_path
+  get '/moods/new/smiley', to: 'moods#new_smiley', as: :new_smiley_mood
 end

@@ -28,14 +28,12 @@
     <%#= f.submit %>
     <!-- <%# end %> -->
     <!-- </div> -->
-    <%= simple_form_for(@mood) do |f| %>
-      <%#= f.label :rating %>
-      <%= f.input :rating, as: :hidden, collection: Mood.ratings.keys %>
-      <%#= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
-      <%#= f.submit %>
-      <%# end %>
-      <%# unless @mood.rating.nil? %>
-      <!-- <div id="smiley-container">
+    <%#= f.label :rating %>
+    <%#= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
+    <%#= f.submit %>
+    <%# end %>
+    <%# unless @mood.rating.nil? %>
+    <!-- <div id="smiley-container">
         <fieldset class="form-group radio_buttons optional mood_rating">
           <legend class="col-form-label pt-0">How are you feeling today?</legend>
           <input type="hidden" name="mood[rating]" value="">
@@ -142,10 +140,12 @@
           </div>
         </fieldset>
       </div> -->
-      <%# end %>
-      <%#= link_to new_mood_path(rating: )  %>
-      <%#= @mood %>
-      <%#= @mood.rating.nil? %>
+    <%# end %>
+    <%#= link_to new_mood_path(rating: )  %>
+    <%#= @mood %>
+    <%#= @mood.rating.nil? %>
+    <%= simple_form_for(@mood) do |f| %>
+      <%= f.input :rating, as: :hidden, collection: Mood.ratings.keys %>
       <%= f.input :activity_list,
           as: :check_boxes,
           collection: Mood.activities,
