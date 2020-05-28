@@ -37,12 +37,12 @@ class MoodsController < ApplicationController
 
   def show
     today = Date.parse params[:date]
-    @moods = current_user.moods.where(created_at: today.beginning_of_day..today.end_of_day).order(created_at: :asc)
+    @moods = current_user.moods.where(created_at: today.beginning_of_day..today.end_of_day).order(created_at: :asc).includes([:taggings])
     authorize @moods
   end
 
   def insights
-    @moods = policy_scope(Mood).order(created_at: :desc)
+    @moods = policy_scope(Mood).order(created_at: :desc).includes([:taggings])
     @week_activities_count = activity_frequency(Date.today.beginning_of_week..Date.today.end_of_week).first(5)
     @month_activities_count = activity_frequency(Date.today.beginning_of_month..Date.today.end_of_month).first(5)
     @year_activities_count = activity_frequency(Date.today.beginning_of_year..Date.today.end_of_year).first(5)
