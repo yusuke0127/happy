@@ -1,0 +1,13 @@
+<p>What You Enjoy Doing Most!</p>
+<% @activity_frequency.first(10).each do |activity| %>
+  <li>
+    <%= activity[0] %>
+  </li>
+<% end %>
+<hr>
+<p>What Makes You Feel Awful</p>
+<% @bad_activity_frequency.first(10).each do |activity| %>
+  <li>
+    <%= activity[0] %>
+  </li>
+<% end %>
