@@ -1,0 +1,42 @@
+.alert {
+  bottom: 60px;
+  right: 0px;
+  background-color: $light-gray;
+  border: 1px solid lightgrey;
+  color: #A5A7AC;
+}
+
+a.nav-link-login {
+  color: white;
+}
+
+.form-actions-button {
+  background-color: $logo-colour;
+  border-radius: 4px;
+  text-align: center;
+  input.btn {
+    color: white;
+  }
+  margin-bottom: 12px;
+  &:hover {
+  background: #b9e8eb;
+  }
+}
+
+.nav-top {
+  justify-content: space-around;
+  background: $logo-colour;
+  height: 8vh;
+  color: white;
+  text-align: center;
+  h6 {
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -1px;
+    margin-top: 8px;
+  }
+}
+
+div.container-login {
+  margin: 80px 40px;
+}
