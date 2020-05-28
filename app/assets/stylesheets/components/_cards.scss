@@ -97,11 +97,18 @@
 .overall {
   display: flex;
   justify-content: space-between;
-  margin: 20px auto;
+  margin-top: 20px;
+  margin-bottom: 16px;
 }
+
 
 .emotion {
   text-align: center;
+  background-color: white;
+  width: 102px;
+  height: 60px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   i {
     font-size: 48px;
     margin-top: -8px;

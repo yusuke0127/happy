@@ -1,12 +1,17 @@
 <div class="container mt-4">
   <h4 style="font-weight: 600;"><%= Date.today.strftime("%a, %b %e") %></h4>
+
   <div class="overall">
-    <h5 style="font-weight: 600;">Your Mood</h5>
-    <div class="emotion">
-      <p>Average</p>
-      <i class="<%= mood_fontawesome(@average) %>"></i>
+    <div>
+      <h5 style="font-weight: 600;">Your Mood of Today</h5>
+      <div class="emotion">
+        <!-- <p>Average</p> -->
+        <i class="<%= mood_fontawesome(@average) %> mt-2"></i>
+      </div>
     </div>
   </div>
+
+
   <div class="calendar-button">
     <h5 style="font-weight: 600;">Your Week</h5>
     <%= link_to calendar_moods_path do %>
@@ -27,7 +32,7 @@
   <% @moods.each do |mood| %>
     <div class="card-product">
 
-      <h5 class="text-right mb-0 mt-2 mr-2"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
+      <h5 class="text-right mb-0 mt-3 mr-3"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
       <div class="card-product-infos">
         <div class="emoji">
         <% case mood.rating %>
@@ -60,21 +65,12 @@
           <h4><%= mood.rating.capitalize %></h4>
           <div class="tags">
             <% mood.activity_list.each do |activity| %>
-              <p class="activity-card ml-0 mt-1"><%= activity %></p>
+              <p class="activity-card ml-1 mt-1"><%= activity %></p>
             <% end %>
           </div>
         </div>
 
-
-
-
       </div>
-
-
-
-
-
-
     </div>
   <% end %>
 </div>

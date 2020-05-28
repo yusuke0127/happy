@@ -148,5 +148,4 @@ class MoodsController < ApplicationController
     end
     return result.sort_by { |activity, count| count }.reverse
   end
-
 end
