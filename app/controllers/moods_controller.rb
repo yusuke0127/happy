@@ -16,6 +16,13 @@ class MoodsController < ApplicationController
     @moods = policy_scope(Mood)
   end
 
+    
+  def new_smiley
+   @mood = Mood.new	    
+   @rating = params[:rating]
+   authorize @mood	   
+  end
+
   def habits
     fab_moods = policy_scope(Mood).includes(:taggings).where(rating: "fabulous")
     activities = fab_moods.map { |mood| mood.activity_list }.flatten
@@ -35,19 +42,18 @@ class MoodsController < ApplicationController
     @last_week_mood = Mood.ratings.keys[average_moods_last_week]
   end
 
+ 
   def new
-    @mood = Mood.new
+    # @rating = params.has_key?(:rating) ? params[:rating]
+    @mood = Mood.new(rating: params[:rating])
     authorize @mood
-  end
-
-  def new_tag
-    raise
   end
 
   def create
     @mood = Mood.new(mood_params)
     @mood.user = current_user
     authorize @mood
+    # raise
     if @mood.save
       redirect_to moods_path
     else

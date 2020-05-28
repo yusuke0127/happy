@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/moods/habits', to: 'moods#habits', as: :habit_moods
   get '/moods/:date', to: 'moods#show', as: :date_moods
   get '/insights', to: 'moods#insights', as: :insights
+  get '/moods/new/smiley', to: 'moods#new_smiley', as: :new_smiley_mood
 end

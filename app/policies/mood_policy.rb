@@ -9,6 +9,10 @@ class MoodPolicy < ApplicationPolicy
     true
   end
 
+  def new_smiley?
+    true
+  end
+
   def show?
     record.any? ? record.first.user == user : true
   end
