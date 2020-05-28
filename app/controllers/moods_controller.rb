@@ -37,7 +37,7 @@ class MoodsController < ApplicationController
 
   def show
     today = Date.parse params[:date]
-    @moods = current_user.moods.where(created_at: today.beginning_of_day..today.end_of_day)
+    @moods = current_user.moods.where(created_at: today.beginning_of_day..today.end_of_day).order(created_at: :asc)
     authorize @moods
   end
 

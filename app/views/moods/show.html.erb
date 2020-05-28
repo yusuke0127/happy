@@ -1,7 +1,44 @@
-<h1>Show Page/ Display todays' moods</h1>
+<div class="container m-0">
+<h2 class="text-center text-info">Moods of the day</h2>
+<p class="text-center text-dark">(<%= params[:date] %>)</p>
 
-<ul>
-  <% @moods.each do |mood| %>
-    <li><%= mood.rating %> | <%= mood.activity_list %> </li>
+
+<% @moods.each do |mood| %>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h5><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
+      <h4><%= mood.rating.capitalize %></h4>
+      <div class="tags">
+        <% mood.activity_list.each do |activity| %>
+          <p class="activity-card"><%= activity %></p>
+        <% end %>
+      </div>
+    </div>
+    <% case mood.rating %>
+    <% when "awful" %>
+    <span style="font-size: 48px; margin-right: 30px">
+      <i class="far fa-sad-cry"></i>
+    </span>
+    <% when "meh" %>
+    <span style="font-size: 48px; margin-right: 30px">
+      <i class="far fa-meh"></i>
+    </span>
+    <% when "neutral" %>
+    <span style="font-size: 48px; margin-right: 30px">
+      <i class="far fa-smile"></i>
+    </span>
+    <% when "happy" %>
+    <span style="font-size: 48px; margin-right: 30px">
+      <i class="far fa-laugh-beam"></i>
+    </span>
+    <% when "fabulous" %>
+    <span style="font-size: 48px; margin-right: 30px">
+      <i class="far fa-grin-hearts"></i>
+    </span>
+  <% else %>
+    <i class="fas fa-times"></i>
   <% end %>
-</ul>
+</div>
+<% end %>
+
+</div>
