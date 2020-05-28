@@ -16,18 +16,28 @@ class MoodsController < ApplicationController
     @moods = policy_scope(Mood)
   end
 
-  def new
+  # new form
+  # pass mood.rating as params with link to
+  # select activities
+  # create an instance with the mood and activity
+  def new_smiley
     @mood = Mood.new
+    @rating = params[:rating]
     authorize @mood
   end
 
-  def new_tag
-    raise
+
+  def new
+    # @rating = params.has_key?(:rating) ? params[:rating]
+    @mood = Mood.new(rating: params[:rating])
+    authorize @mood
   end
+
   def create
     @mood = Mood.new(mood_params)
     @mood.user = current_user
     authorize @mood
+    # raise
     if @mood.save
       redirect_to moods_path
     else

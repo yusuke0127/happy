@@ -29,12 +29,19 @@
     <!-- <%# end %> -->
     <!-- </div> -->
     <%= simple_form_for(@mood) do |f| %>
-      <div id="smiley-container">
+      <%#= f.label :rating %>
+      <%= f.input :rating, as: :hidden, collection: Mood.ratings.keys %>
+      <%#= f.input :activity_list, as: :check_boxes, collection: Mood.activities %>
+      <%#= f.submit %>
+      <%# end %>
+      <%# unless @mood.rating.nil? %>
+      <!-- <div id="smiley-container">
         <fieldset class="form-group radio_buttons optional mood_rating">
           <legend class="col-form-label pt-0">How are you feeling today?</legend>
           <input type="hidden" name="mood[rating]" value="">
           <div class="form-check form-check-inline">
-            <input class="form-check-input radio_buttons optional" type="radio" value="awful" name="mood[rating]" id="mood_rating_awful">
+            <input class="form-check-input radio_buttons optional" type="radio" value="<%= @mood.rating %>" name="mood[rating]" id="mood_rating_awful">
+            <%= link_to "", new_mood_path(rating: 'awful'), id: "awful-link" %>
             <label class="form-check-label collection_radio_buttons" for="mood_rating_awful">
               <svg class="awful-3d" width="44px" height="44px" viewBox="0 0 44 44" version="1.1" preserveAspectRatio="xMinYMin meet" class="svg-content">
                 <g id="awful-3d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0, 0)">
@@ -134,12 +141,16 @@
             </label>
           </div>
         </fieldset>
-      </div>
+      </div> -->
+      <%# end %>
+      <%#= link_to new_mood_path(rating: )  %>
+      <%#= @mood %>
+      <%#= @mood.rating.nil? %>
       <%= f.input :activity_list,
-        as: :check_boxes,
-        collection: Mood.activities,
-        wrapper: :vertical_collection_inline
-        %>
+          as: :check_boxes,
+          collection: Mood.activities,
+          wrapper: :vertical_collection_inline
+          %>
       <%= f.submit %>
     <% end %>
     <script>
@@ -149,11 +160,11 @@
       this.classList.toggle('active')
           }
       
-      document.querySelector('.awful-3d').addEventListener('click', classToggle);
-      document.querySelector('.meh-3d').addEventListener('click', classToggle);
-      document.querySelector('.neutral-3d').addEventListener('click', classToggle);
-      document.querySelector('.happy-3d').addEventListener('click', classToggle);
-      document.querySelector('.fab-3d').addEventListener('click', classToggle);
+      document.querySelector('.awful-3d').addEventListener('change', classToggle);
+      document.querySelector('.meh-3d').addEventListener('change', classToggle);
+      document.querySelector('.neutral-3d').addEventListener('change', classToggle);
+      document.querySelector('.happy-3d').addEventListener('change', classToggle);
+      document.querySelector('.fab-3d').addEventListener('change', classToggle);
     </script>
     <%#= simple_form_for @mood do |f| %>
       <%#= f.input :rating,
