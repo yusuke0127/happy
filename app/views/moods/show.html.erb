@@ -1,5 +1,5 @@
-<div class="container m-3">
-<h2 class="text-center text-info"><%= Date.strptime(params[:date], '%Y-%m-%d').strftime("%A, %b %e") %></h2>
+<div class="container mt-3">
+<h2 class="text-center text-secondary"><%= Date.strptime(params[:date], '%Y-%m-%d').strftime("%A, %b %e") %></h2>
 
 
 <% @moods.each do |mood| %>

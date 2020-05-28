@@ -1,6 +1,5 @@
 class Mood < ApplicationRecord
   belongs_to :user
-  validates :mood, presence: :true
 
   enum rating: [:awful, :meh, :neutral, :happy, :fabulous]
   acts_as_taggable_on :activities
