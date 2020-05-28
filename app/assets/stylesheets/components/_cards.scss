@@ -1,17 +1,28 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 108px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
   // added
   width: 48vh;
   margin-top: 20px;
   border-radius: 8px;
   margin: 16px auto;
+  position: relative;
 }
+
+.card-product-infos {
+  display: flex;
+  align-items: center;
+}
+
+.tags .active-card {
+  margin: 0;
+}
+
 
 .card-product img {
   height: 100%;
@@ -28,6 +39,7 @@
 .card-product h4 {
   margin-top: -3px;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 .card-product h5 {
@@ -35,12 +47,16 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 12px;
-  margin-top: 0px;
+  // margin-bottom: 12px;
+  // margin-top: 0px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding-left: 24px;
+  padding-top: 12px;
 }
 
 // // .activity-list li {
@@ -81,11 +97,18 @@
 .overall {
   display: flex;
   justify-content: space-between;
-  margin: 20px auto;
+  margin-top: 20px;
+  margin-bottom: 16px;
 }
+
 
 .emotion {
   text-align: center;
+  background-color: white;
+  width: 102px;
+  height: 60px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   i {
     font-size: 48px;
     margin-top: -8px;
