@@ -3,7 +3,7 @@ class MoodsController < ApplicationController
 
   def index
     today = Date.today.beginning_of_day..Date.today.end_of_day
-    @moods = policy_scope(Mood).order(created_at: :desc).where(created_at: today)
+    @moods = policy_scope(Mood).order(created_at: :desc).includes([:taggings]).where(created_at: today)
     # average for today
     @average = current_user.average_mood_for(Date.today)
     # weekly average mood
