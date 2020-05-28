@@ -9,7 +9,7 @@
     <%= link_to new_mood_path, class: "icon-color #{'icon-color-active' if params[:controller] == 'moods' && params[:action] == 'new'}" do %>
       <i class="fas fa-plus"></i>
     <% end %>
-    <%= link_to "#", class: "icon-color" do %>
+    <%= link_to habit_moods_path, class: "icon-color" do %>
       <i class="fas fa-seedling"></i>
     <% end %>
     <!--   <div class="circle-button">

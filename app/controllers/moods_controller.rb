@@ -16,6 +16,16 @@ class MoodsController < ApplicationController
     @moods = policy_scope(Mood)
   end
 
+  def habits
+    fab_moods = policy_scope(Mood).includes(:taggings).where(rating: "fabulous")
+    activities = fab_moods.map { |mood| mood.activity_list }.flatten
+    @activity_frequency = frequency(activities)
+
+    awful_moods = policy_scope(Mood).includes(:taggings).where(rating: "awful")
+    bad_activities = awful_moods.map { |mood| mood.activity_list }.flatten
+    @bad_activity_frequency = frequency(bad_activities)
+  end
+
   def new
     @mood = Mood.new
     authorize @mood
@@ -24,6 +34,7 @@ class MoodsController < ApplicationController
   def new_tag
     raise
   end
+
   def create
     @mood = Mood.new(mood_params)
     @mood.user = current_user
@@ -130,5 +141,12 @@ class MoodsController < ApplicationController
     hash
   end
 
+  def frequency(array)
+    result = Hash.new(0)
+    array.each do |item|
+      result[item] += 1
+    end
+    return result.sort_by { |activity, count| count }.reverse
+  end
 
 end

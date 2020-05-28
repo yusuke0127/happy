@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :moods, only: [:index, :new, :create]
 
   get '/moods/calendar', to: 'moods#calendar', as: :calendar_moods
+  get '/moods/habits', to: 'moods#habits', as: :habit_moods
   get '/moods/:date', to: 'moods#show', as: :date_moods
   get '/insights', to: 'moods#insights', as: :insights
 end
