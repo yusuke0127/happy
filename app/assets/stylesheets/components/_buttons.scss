@@ -106,7 +106,9 @@ button.neu.circle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 26px;
   a {
+    margin-right: 6px;
     background: #eff6fc;
     border-radius: 20px;
     text-decoration: none;
@@ -132,6 +134,10 @@ button.neu.circle {
   }
   i {
     margin-left: 2px;
+  }
+  h5 {
+    margin-left: 6px;
+    color: #2b2b2b;
   }
 }
 
