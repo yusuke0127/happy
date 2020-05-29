@@ -13,12 +13,37 @@
 
   .activity-list {
     // border: 1px solid black;
+    &:hover {
+      opacity: 1;
+    }
+    &.active {
+      opacity: 1;
+    }
   }
 
   .activity-pill {
     // border: 1px solid black;
-    display: flex;
-    justify-content: space-around;
+    // display: flex;
+    // justify-content: space-around;
+  }
+  .form-check-input:checked + .form-check-label{
+    opacity: 1;
+
+    // &.active {
+    //   opacity: 1;
+    // }
+
+  }
+
+.form-text-activity {
+  h2 {
+    font-weight: lighter;
+    font-size: 32px;
+  }
+  }
+  #new_mood {
+    padding-top: 56px;
+
   }
   .form-check-label {
     border: 1px solid #4A4A4A;
@@ -28,14 +53,15 @@
     padding: 4px 12px;
     font-weight: bold;
     margin-bottom: 4px;
+    &:hover {
+      opacity: 1;
+    }
+    &.active {
+      opacity: 1;
+    }
 
   }
-.form-text-activity {
-  h2 {
-    font-weight: lighter;
-    font-size: 32px;
-  }
-}
+
 }
 .form-btn-container {
     margin-top: 20px;
@@ -45,12 +71,22 @@
     background-color: #98d3d6;
     padding: 4px 12px;
     color: white;
+    &:hover {
+      background-color: #69c3c7;
+      border: 1px solid #69c3c7;
+
+    }
+    &.active {
+      background-color: #69c3c7;
+    }
   }
+
 }
+
 
 .smiley-form-container {
   text-align: center;
-  padding-top: 200px;
+  padding-top: 264px;
   .smiley-form-text {
     margin: 24px;
     padding-bottom: 32px;
