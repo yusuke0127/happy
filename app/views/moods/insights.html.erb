@@ -29,8 +29,9 @@
       <div class="top-activities-container">
         <div class="cards-container">
           <h4>Top 5 Weekly Activities</h4>
-          <% @week_activities_count.each do |activity|%>
-            <div class="activity-card color-<%= (1..5).to_a.sample  %>">
+          <% @week_activities_count.each_with_index do |activity, index|%>
+            <% n = index + 1 %>
+            <div class="activity-card color-<%= n %>">
               <div>
                 <p><%=  activity[0]%></p>
               </div>
@@ -38,6 +39,7 @@
                 <p><%= activity[1]  %>times</p>
               </div>
             </div>
+            <% n += 1 %>
           <% end %>
         </div>
       </div>
@@ -53,8 +55,9 @@
       <div class="top-activities-container">
         <div class="cards-container">
           <h4>Top 5 Monthly Activities</h4>
-          <% @month_activities_count.each do |activity|%>
-            <div class="activity-card color-<%= (1..5).to_a.sample  %>">
+          <% @month_activities_count.each_with_index do |activity, index|%>
+            <% n = index + 1 %>
+            <div class="activity-card color-<%= n %>">
               <div>
                 <p><%=  activity[0]%></p>
               </div>
@@ -62,6 +65,7 @@
                 <p><%= activity[1]  %>times</p>
               </div>
             </div>
+            <% n += 1 %>
           <% end %>
         </div>
       </div>
@@ -76,8 +80,9 @@
       <div class="top-activities-container">
         <div class="cards-container">
           <h4>Top 5 Yearly Activities</h4>
-          <% @year_activities_count.each do |activity|%>
-            <div class="activity-card color-<%= (1..5).to_a.sample  %>">
+          <% @year_activities_count.each_with_index do |activity, index|%>
+            <% n = index + 1 %>
+            <div class="activity-card color-<%= n %>">
               <div>
                 <p><%=  activity[0]%></p>
               </div>
@@ -85,6 +90,7 @@
                 <p><%= activity[1]  %>times</p>
               </div>
             </div>
+            <% n += 1 %>
           <% end %>
         </div>
       </div>
