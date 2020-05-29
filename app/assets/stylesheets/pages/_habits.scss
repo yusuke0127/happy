@@ -2,36 +2,43 @@
   width: 330px;
   height: 140px;
   object-fit: cover;
-  margin: 23px;
-  margin-top: 4px;
+  margin: 24px 36px;
+  margin-top: 20px;
 }
 
 .title-habits h4 {
-  margin: 23px;
+  margin: 24px 36px;
   font-weight: 600;
   font-size: 20px;
   text-decoration: underline;
   text-underline-position: under;
+  margin-bottom: 16px;
 }
 
 .happy-habits h4 {
-  margin: 23px;
+  margin: 24px 36px;
   font-weight: 600;
   font-size: 20px;
   text-decoration: underline;
   text-underline-position: under;
-  margin-top: -8px;
+  margin-top: -10px;
+  margin-bottom: 16px;
 }
 
 .happy-habits p {
-  margin: 8px 23px;
+  margin: 6px 36px;
   font-weight: 300;
   font-size: 15px;
 }
 
 .progress {
   width: 330px;
-  margin: 8px auto;
+  margin: 8px 36px;
+  height: 21px;
+}
+
+.progress-bar {
+  color: #424242;
 }
 
 .last-week {
@@ -77,4 +84,10 @@
 
 .compare-weeks {
   display: grid;
+  margin: 0px 12px;
+}
+
+.container-habits {
+  margin: 20px auto;
+  margin-left: 6px;
 }
