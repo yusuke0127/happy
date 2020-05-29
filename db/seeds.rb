@@ -40,10 +40,11 @@ puts "Done creating yusuke"
 
 activities = %w[family friends date party netflix reading gaming relax sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling hobbies sick movie TV arguement social\ media sex]
 random_rating = [0, 1, 2, 3, 4]
+bad_rating = [0, 1]
 
 puts ""
-puts "Creating mood for pins"
-840.times do
+puts "Creating random mood for pins"
+400.times do
   mood_1 = Mood.new(
     rating: random_rating.sample,
     activity_list: activities.sample,
@@ -52,11 +53,25 @@ puts "Creating mood for pins"
   mood_1.user = pins
   mood_1.save!
 end
-puts "Done creating mood for pins"
+puts "Done creating random mood for pins"
+
+range = (7..14)
+puts ""
+puts "Creating bad mood for pins"
+50.times do
+  mood_1 = Mood.new(
+    rating: bad_rating.sample,
+    activity_list: activities.sample,
+    created_at: (rand(range)).days.ago
+  )
+  mood_1.user = pins
+  mood_1.save!
+end
+puts "Done creating bad mood for pins"
 
 puts ""
 puts "Creating mood for katsu"
-840.times do
+100.times do
   mood_2 = Mood.new(
     rating: random_rating.sample,
     activity_list: activities.sample,
@@ -69,7 +84,7 @@ puts "Done creating mood for katsu"
 
 puts ""
 puts "Creating mood for yusuke"
-840.times do
+100.times do
   mood_3 = Mood.new(
     rating: random_rating.sample,
     activity_list: activities.sample,
@@ -79,5 +94,3 @@ puts "Creating mood for yusuke"
   mood_3.save!
 end
 puts "Done creating mood for yusuke"
-
-
