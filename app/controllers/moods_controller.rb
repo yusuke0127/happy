@@ -1,5 +1,5 @@
 class MoodsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new]
+  skip_before_action :authenticate_user!, only: [:new_smiley]
 
   def index
     today = Date.today.beginning_of_day..Date.today.end_of_day
@@ -16,11 +16,11 @@ class MoodsController < ApplicationController
     @moods = policy_scope(Mood)
   end
 
-    
+
   def new_smiley
-   @mood = Mood.new	    
+   @mood = Mood.new
    @rating = params[:rating]
-   authorize @mood	   
+   authorize @mood
   end
 
   def habits
@@ -42,7 +42,7 @@ class MoodsController < ApplicationController
     @last_week_mood = Mood.ratings.keys[average_moods_last_week]
   end
 
- 
+
   def new
     # @rating = params.has_key?(:rating) ? params[:rating]
     @mood = Mood.new(rating: params[:rating])
