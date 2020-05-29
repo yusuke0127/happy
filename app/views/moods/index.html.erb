@@ -1,17 +1,19 @@
 <div class="container mt-4">
-  <h4 style="font-weight: 600;"><%= Date.today.strftime("%a, %b %e") %></h4>
-
+  <div class="date-today">
+    <h5><%= Date.today.strftime("%a") %></h5>
+    <h2><%= Date.today.strftime("%e") %></h2>
+    <i class="fas fa-ellipsis-h"></i>
+  </div>
+  <!-- <h4 style="font-weight: 600;"><%#= Date.today.strftime("%a, %b %e") %></h4> -->
   <div class="overall">
-    <div>
-      <h5 style="font-weight: 600;">Your Mood of Today</h5>
+    <div class="today-mood-both">
+      <h5 style="font-weight: 600;">Your Mood Today</h5>
       <div class="emotion">
         <!-- <p>Average</p> -->
         <i class="<%= mood_fontawesome(@average) %> mt-2"></i>
       </div>
     </div>
   </div>
-
-
   <div class="calendar-button">
     <h5 style="font-weight: 600;">Your Week</h5>
     <%= link_to calendar_moods_path do %>
@@ -28,49 +30,46 @@
       </button>
     <% end %>
   </div>
-  <h5 style="font-weight: 600; margin-top: 20px;">Your recent feelings</h5>
+  <h5 style="font-weight: 600; margin-top: 20px; color: #2b2b2b; margin-left: 6px;">Your Recent Moods</h5>
   <% @moods.each do |mood| %>
     <div class="card-product">
-
-      <h5 class="text-right mb-0 mt-3 mr-3"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
+      <h5 class="text-right mb-0 mt-4 mr-3"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
       <div class="card-product-infos">
         <div class="emoji">
-        <% case mood.rating %>
-        <% when "awful" %>
-        <span style="font-size: 56px; margin-right: 24px">
-          <i class="far fa-sad-cry"></i>
-        </span>
-        <% when "meh" %>
-        <span style="font-size: 56px; margin-right: 24px">
-          <i class="far fa-meh"></i>
-        </span>
-        <% when "neutral" %>
-        <span style="font-size: 56px; margin-right: 24px">
-          <i class="far fa-smile"></i>
-        </span>
-        <% when "happy" %>
-        <span style="font-size: 56px; margin-right: 24px">
-          <i class="far fa-laugh-beam"></i>
-        </span>
-        <% when "fabulous" %>
-        <span style="font-size: 56px; margin-right: 24px">
-          <i class="far fa-grin-hearts"></i>
-        </span>
+          <% case mood.rating %>
+          <% when "awful" %>
+          <span style="font-size: 56px; margin-right: 24px">
+            <i class="far fa-sad-cry"></i>
+          </span>
+          <% when "meh" %>
+          <span style="font-size: 56px; margin-right: 24px">
+            <i class="far fa-meh"></i>
+          </span>
+          <% when "neutral" %>
+          <span style="font-size: 56px; margin-right: 24px">
+            <i class="far fa-smile"></i>
+          </span>
+          <% when "happy" %>
+          <span style="font-size: 56px; margin-right: 24px">
+            <i class="far fa-laugh-beam"></i>
+          </span>
+          <% when "fabulous" %>
+          <span style="font-size: 56px; margin-right: 24px">
+            <i class="far fa-grin-hearts"></i>
+          </span>
         <% else %>
           <i class="fas fa-times"></i>
         <% end %>
       </div>
-
-        <div>
-          <h4><%= mood.rating.capitalize %></h4>
-          <div class="tags">
-            <% mood.activity_list.each do |activity| %>
-              <p class="activity-card ml-1 mt-1"><%= activity %></p>
-            <% end %>
-          </div>
+      <div>
+        <h4><%= mood.rating.capitalize %></h4>
+        <div class="tags">
+          <% mood.activity_list.each do |activity| %>
+            <p class="activity-card ml-1 mt-1"><%= activity %></p>
+          <% end %>
         </div>
-
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
