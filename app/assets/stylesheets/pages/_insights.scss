@@ -25,11 +25,12 @@
   }
 }
 
-.activity-card.color-1 { background-color: #f49097;}
-.activity-card.color-2 { background-color: #4ecdc4;}
-.activity-card.color-3 { background-color: #ffc759;}
-.activity-card.color-4 { background-color: #f7aef8;}
-.activity-card.color-5 { background-color: #ffe066;}
+.activity-card.color-1 { background-color: $primary;}
+.activity-card.color-2 { background-color: $success;}
+.activity-card.color-3 { background-color: $info;}
+.activity-card.color-4 { background-color: $danger;}
+.activity-card.color-5 { background-color: $warning;}
+
 
 .tab-content {
   width: 100%;
