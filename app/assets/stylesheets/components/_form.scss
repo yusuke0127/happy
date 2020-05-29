@@ -11,21 +11,30 @@
     display: none;
   }
 
-  .activity-list {
-    // border: 1px solid black;
-    &:hover {
-      opacity: 1;
-    }
-    &.active {
-      opacity: 1;
-    }
-  }
+  // .activity-list {
+  //   // border: 1px solid black;
+  //   &:hover {
+  //     opacity: 1;
+  //   }
+  //   &.active {
+  //     opacity: 1;
+  //   }
+  // }
 
   .activity-pill {
     // border: 1px solid black;
     // display: flex;
     // justify-content: space-around;
   }
+
+  // .form-check-input + .form-check-label{
+  //   opacity: 0.4;
+
+  //   // &.active {
+  //   //   opacity: 1;
+  //   // }
+
+  // }
   .form-check-input:checked + .form-check-label{
     opacity: 1;
 
@@ -56,9 +65,9 @@
     &:hover {
       opacity: 1;
     }
-    &.active {
-      opacity: 1;
-    }
+    // &.active {
+    //   opacity: 1;
+    // }
 
   }
 
@@ -94,5 +103,10 @@
   }
   h2 {
     font-weight: lighter;
+  }
+
+  fieldset {
+    margin-left: 12px;
+
   }
 }
