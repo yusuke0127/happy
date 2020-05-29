@@ -3,7 +3,7 @@ const clickSmileyLink = () => {
   if (smileyRadioBtns) {
     smileyRadioBtns.forEach((radioBtn) => {
       radioBtn.addEventListener('change', (event) => {
-        console.log(event)
+        // console.log(event)
         const value = event.currentTarget.value
         console.log(value)
         document.querySelector(`#${value}-link`).click()

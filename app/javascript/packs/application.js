@@ -28,8 +28,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { clickSmileyLink } from '../components/smileylink';
+import { smileyClassToggle } from '../components/smiley_selector';
+import { clickActvityBtn } from '../components/activity_selector';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   clickSmileyLink();
+  smileyClassToggle();
+  clickActvityBtn();
 });

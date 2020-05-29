@@ -156,10 +156,10 @@
           <div class="activity-pill">
             <%= f.input :activity_list,
                 as: :check_boxes,
-                label: false,
                 collection: Mood.activities,
                 wrapper: :vertical_collection_inline,
-                label: ""
+                label: "",
+                class: "activity-btn"
                 %>
           </div>
           <div class="form-btn-container">
@@ -169,17 +169,17 @@
       <% end %>
     </div>
     <script>
-      function classToggle() {
-      console.log('Working')
-      console.log(this)
-      this.classList.toggle('active')
-          }
-
-      document.querySelector('.awful-3d').addEventListener('change', classToggle);
-      document.querySelector('.meh-3d').addEventListener('change', classToggle);
-      document.querySelector('.neutral-3d').addEventListener('change', classToggle);
-      document.querySelector('.happy-3d').addEventListener('change', classToggle);
-      document.querySelector('.fab-3d').addEventListener('change', classToggle);
+      // function classToggle() {
+      // console.log('Working')
+      // console.log(this)
+      // this.classList.toggle('active')
+      //     }
+      
+      // document.querySelector('.awful-3d').addEventListener('change', classToggle);
+      // document.querySelector('.meh-3d').addEventListener('change', classToggle);
+      // document.querySelector('.neutral-3d').addEventListener('change', classToggle);
+      // document.querySelector('.happy-3d').addEventListener('change', classToggle);
+      // document.querySelector('.fab-3d').addEventListener('change', classToggle);
     </script>
     <%#= simple_form_for @mood do |f| %>
       <%#= f.input :rating,
