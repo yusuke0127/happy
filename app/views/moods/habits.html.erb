@@ -1,64 +1,66 @@
-<div class="title-habits">
-  <h4>For You</h4>
-</div>
-<%= image_tag("good_habit.jpg", alt: "good habit", class: "bad-habit-img") %>
-<div class="happy-habits">
-  <h4>Stay Happy.</h4>
-  <p><em>Find happiness in the little things of everyday life.</em></p>
-  <p><em>Your favourite things to do below.</em></p>
-</div>
-<% @activity_frequency.first(5) %>
-<div class="progress mt-4">
-  <div class="progress-bar bg-success" role="progressbar" style="width: <%= @activity_frequency[0][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[0][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[0][0] %> <%= @activity_frequency[0][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: <%= @activity_frequency[1][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[1][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[1][0] %> <%= @activity_frequency[1][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-warning" role="progressbar" style="width: <%= @activity_frequency[2][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[2][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[2][0] %> <%= @activity_frequency[2][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @activity_frequency[3][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[3][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[3][0] %> <%= @activity_frequency[3][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @activity_frequency[4][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[4][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[4][0] %> <%= @activity_frequency[4][1] %>x</div>
-</div>
-<hr>
-<%= image_tag("bad_habit.jpg", alt: "bad habit", class: "bad-habit-img") %>
-<div class="happy-habits">
-  <h4>Don't stress.</h4>
-  <p><em>Aww..you're not feeling it. Focus, breathe, and relax.</em></p>
-  <p><em>You're not liking what you do below.</em></p>
-</div>
-<% @bad_activity_frequency.first(5) %>
-<div class="progress mt-4">
-  <div class="progress-bar bg-success" role="progressbar" style="width: <%= @bad_activity_frequency[0][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[0][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[0][0] %> <%= @bad_activity_frequency[0][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: <%= @bad_activity_frequency[1][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[1][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[1][0] %> <%= @bad_activity_frequency[1][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-warning" role="progressbar" style="width: <%= @bad_activity_frequency[2][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[2][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[2][0] %> <%= @bad_activity_frequency[2][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @bad_activity_frequency[3][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[3][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[3][0] %> <%= @bad_activity_frequency[3][1] %>x</div>
-</div>
-<div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: <%= @bad_activity_frequency[4][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[4][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[4][0] %> <%= @bad_activity_frequency[4][1] %>x</div>
-</div>
-<hr>
-<%= image_tag("improve_mood_2.gif", alt: "improve habit", class: "bad-habit-img") %>
-<div class="happy-habits">
-  <h4>Better mood.</h4>
-  <p><em>We hope you feel better every week...</em></p>
-</div>
-<div class="compare-weeks">
-  <div class="last-week mt-4">
-    <p>Last Week: </p>
-    <i class="<%= mood_fontawesome(@last_week_mood) %>"></i>
+<div class="container-habits">
+  <div class="title-habits">
+    <h4>For You</h4>
   </div>
-  <div class="this-week">
-    <p>This Week: </p>
-    <i class="<%= mood_fontawesome(@this_week_mood) %>"></i>
+  <%= image_tag("good_habit.jpg", alt: "good habit", class: "bad-habit-img") %>
+  <div class="happy-habits">
+    <h4>Stay Happy.</h4>
+    <p><em>Find happiness in the little things of everyday life.</em></p>
+    <p><em>Your favourite things to do below.</em></p>
+  </div>
+  <% @activity_frequency.first(5) %>
+  <div class="progress mt-4">
+    <div class="progress-bar bg-success" role="progressbar" style="width: <%= @activity_frequency[0][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[0][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[0][0] %> <%= @activity_frequency[0][1] %>x</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-info" role="progressbar" style="width: <%= @activity_frequency[1][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[1][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[1][0] %> <%= @activity_frequency[1][1] %>x</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-warning" role="progressbar" style="width: <%= @activity_frequency[2][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[2][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[2][0] %> <%= @activity_frequency[2][1] %>x</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @activity_frequency[3][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[3][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[3][0] %> <%= @activity_frequency[3][1] %>x</div>
+  </div>
+  <div class="progress mb-4">
+    <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @activity_frequency[4][1] + 40 %>%" aria-valuenow="<%= @activity_frequency[4][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @activity_frequency[4][0] %> <%= @activity_frequency[4][1] %>x</div>
+  </div>
+  <hr>
+  <%= image_tag("bad_habit.jpg", alt: "bad habit", class: "bad-habit-img") %>
+  <div class="happy-habits">
+    <h4>Don't stress.</h4>
+    <p><em>Aww..you're not feeling it. Focus, breathe, and relax.</em></p>
+    <p><em>You're not liking what you do below.</em></p>
+  </div>
+  <% @bad_activity_frequency.first(5) %>
+  <div class="progress mt-4">
+    <div class="progress-bar bg-success" role="progressbar" style="width: <%= @bad_activity_frequency[0][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[0][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[0][0] %> <%= @bad_activity_frequency[0][1] %>x</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-info" role="progressbar" style="width: <%= @bad_activity_frequency[1][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[1][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[1][0] %> <%= @bad_activity_frequency[1][1] %>x</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-warning" role="progressbar" style="width: <%= @bad_activity_frequency[2][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[2][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[2][0] %> <%= @bad_activity_frequency[2][1] %>x</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-danger" role="progressbar" style="width: <%= @bad_activity_frequency[3][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[3][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[3][0] %> <%= @bad_activity_frequency[3][1] %>x</div>
+  </div>
+  <div class="progress mb-4">
+    <div class="progress-bar bg-success" role="progressbar" style="width: <%= @bad_activity_frequency[4][1] + 40 %>%" aria-valuenow="<%= @bad_activity_frequency[4][1] %>" aria-valuemin="0" aria-valuemax="100"><%= @bad_activity_frequency[4][0] %> <%= @bad_activity_frequency[4][1] %>x</div>
+  </div>
+  <hr>
+  <%= image_tag("improve_mood_2.gif", alt: "improve habit", class: "bad-habit-img") %>
+  <div class="happy-habits">
+    <h4>Better mood.</h4>
+    <p><em>We hope you feel better every week...</em></p>
+  </div>
+  <div class="compare-weeks">
+    <div class="last-week mt-4">
+      <p>Last Week: </p>
+      <i class="<%= mood_fontawesome(@last_week_mood) %>"></i>
+    </div>
+    <div class="this-week">
+      <p>This Week: </p>
+      <i class="<%= mood_fontawesome(@this_week_mood) %>"></i>
+    </div>
   </div>
 </div>
