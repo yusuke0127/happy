@@ -61,3 +61,13 @@
   background-color: #F5F5F5;
 
 }
+
+.reference-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  p {
+    margin: 0;
+    margin-left: 8px;
+  }
+}
