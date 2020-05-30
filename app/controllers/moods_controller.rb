@@ -10,6 +10,10 @@ class MoodsController < ApplicationController
     @week_moods = current_user.weekly_average_moods
     # 7 days ago
     @streak_days = current_user.one_week_mood
+
+
+    @five_good_activities = good_activities.first(5).map {|frequency| frequency[0]}
+    @todays_activities = @moods.map {|mood| mood.activity_list}.flatten
   end
 
   def calendar
@@ -162,5 +166,11 @@ class MoodsController < ApplicationController
       result[item] += 1
     end
     return result.sort_by { |activity, count| count }.reverse
+  end
+
+  def good_activities
+    fab_moods = policy_scope(Mood).includes(:taggings).where(rating: "fabulous")
+    activities = fab_moods.map { |mood| mood.activity_list }.flatten
+    @activity_frequency = frequency(activities)
   end
 end
