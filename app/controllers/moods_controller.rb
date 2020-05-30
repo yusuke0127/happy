@@ -22,9 +22,9 @@ class MoodsController < ApplicationController
 
 
   def new_smiley
-   @mood = Mood.new
-   @rating = params[:rating]
-   authorize @mood
+    @mood = Mood.new
+    @rating = params[:rating]
+    authorize @mood
   end
 
   def habits
