@@ -118,27 +118,27 @@ class MoodsController < ApplicationController
     first_day_of_month = Date.today.beginning_of_month
     first_week = first_day_of_month.beginning_of_week..first_day_of_month.end_of_week
     first_week_average = create_week_hash(first_week).values.sum/7.0.round
-    hash["1st week"] = first_week_average
+    hash["1st Week"] = first_week_average
 
     first_day_of_2nd_week = first_day_of_month + 7
     second_week = first_day_of_2nd_week.beginning_of_week..first_day_of_2nd_week.end_of_week
     second_week_average = create_week_hash(second_week).values.sum/7.0.round
-    hash["2nd week"] = second_week_average
+    hash["2nd Week"] = second_week_average
 
     first_day_of_3rd_week = (first_day_of_month + 14)
     third_week = first_day_of_3rd_week.beginning_of_week..first_day_of_3rd_week.end_of_week
     third_week_average = create_week_hash(third_week).values.sum/7.0.round
-    hash["3rd week"] = third_week_average
+    hash["3rd Week"] = third_week_average
 
     first_day_of_4th_week = (first_day_of_month + 21)
     fourth_week = first_day_of_4th_week.beginning_of_week..first_day_of_4th_week.end_of_week
     fourth_week_average = create_week_hash(fourth_week).values.sum/7.0.round
-    hash["4th week"] = fourth_week_average
+    hash["4th Week"] = fourth_week_average
 
     first_day_of_5th_week = (first_day_of_month + 28)
     fifth_week = first_day_of_5th_week.beginning_of_week..first_day_of_5th_week.end_of_week
     fifth_week_average = create_week_hash(fifth_week).values.sum/7.0.round
-    hash["5th week"] = fifth_week_average
+    hash["5th Week"] = fifth_week_average
     return hash
   end
 
