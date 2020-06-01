@@ -15,7 +15,6 @@ class MoodsController < ApplicationController
 
     @five_good_activities = good_activities.first(5).map {|frequency| frequency[0]}
     @todays_activities = @moods.map {|mood| mood.activity_list}.flatten
-    @friends = current_user.friends
   end
 
   def calendar

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/qr_code', to: 'pages#qr_code', as: :display_qr_code
 
   resources :users, only: [:show]
+  get '/users/:id/community', to: 'users#community', as: :community
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do

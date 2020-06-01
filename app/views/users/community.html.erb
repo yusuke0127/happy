@@ -1,0 +1,31 @@
+<div class="community-title">
+  <h4>Friends (<%= @friends.count %>)</h4>
+</div>
+<div class="friend-container">
+  <% @friends.each do |friend| %>
+    <div class="friend-list">
+      <%= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
+      <%= friend.name %>
+    </div>
+  <% end %>
+</div>
+<div class="community-title">
+  <h4>Community</h4>
+</div>
+<div class="card-happenings">
+  <% @moods.each do |mood| %>
+    <div class="card-list-mood">
+      <%= image_tag mood.user.image_url, class: "square-avatar", alt: "avatar-large" %>
+      <div class="mood-info">
+        <p class="time-mood"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></p>
+        <i class="<%= mood_fontawesome(mood.rating) %> mt-2"></i>
+        <div class="tags-community">
+          <p><%= mood.activity_list %></p>
+        </div>
+      </div>
+      <i class="far fa-heart"></i>
+      <i class="fab fa-line"></i>
+    </div>
+    <hr>
+  <% end %>
+</div>
