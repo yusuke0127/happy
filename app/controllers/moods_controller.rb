@@ -16,6 +16,8 @@ class MoodsController < ApplicationController
     @five_good_activities = good_activities.first(5).map {|frequency| frequency[0]}
     @todays_activities = @moods.map {|mood| mood.activity_list}.flatten
     @friends = current_user.friends
+
+    @message = create_message(@average)
   end
 
   def calendar
@@ -174,6 +176,22 @@ class MoodsController < ApplicationController
     fab_moods = policy_scope(Mood).includes(:taggings).where(rating: "fabulous")
     activities = fab_moods.map { |mood| mood.activity_list }.flatten
     @activity_frequency = frequency(activities)
+  end
+
+  def create_message(average)
+    case average
+    when "awful"
+      message = "Things are getting better! "
+    when "meh"
+      message = "You may need to take some rest! "
+    when "neutral"
+      message = "Have a great day! "
+    when "happy"
+      message = "You're doing great!! "
+    when "fabulous"
+      message = "You're awesome!! "
+    end
+    message
   end
 
 
