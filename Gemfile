@@ -34,6 +34,7 @@ gem "chartkick"
 gem 'devise'
 gem 'font-awesome-sass'
 gem 'groupdate'
+gem 'has_friendship'
 gem 'pundit'
 gem "simple_calendar", "~> 2.0"
 gem 'simple_form'

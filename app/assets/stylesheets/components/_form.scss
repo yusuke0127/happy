@@ -1,5 +1,5 @@
 .form-container {
-  margin: 20px;
+  margin: 20px 20px;
   padding-top: 48px;
   text-align: center;
 
@@ -51,7 +51,8 @@
   }
   }
   #new_mood {
-    padding-top: 56px;
+    padding-top: 8px;
+    margin-left: 12px;
 
   }
   .form-check-label {
@@ -61,7 +62,7 @@
     border-radius: 24px;
     padding: 4px 12px;
     font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     &:hover {
       opacity: 1;
     }
@@ -76,9 +77,9 @@
     margin-top: 20px;
   .form-btn {
     border: 1px solid #98d3d6;
-    border-radius: 24px;
+    border-radius: 50%;
     background-color: #98d3d6;
-    padding: 4px 12px;
+    padding: 20px 16px;
     color: white;
     &:hover {
       background-color: #69c3c7;

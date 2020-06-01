@@ -14,7 +14,8 @@ User.destroy_all
 # creating users
 
 puts "Creating pins"
-pins = User.create!(
+@pins = User.create!(
+  name: "Pins",
   email: "pins.thoo@gmail.com",
   password: "123456"
 )
@@ -22,7 +23,8 @@ puts "Done creating pins"
 
 puts ""
 puts "Creating katsu"
-katsu = User.create!(
+@katsu = User.create!(
+  name: "Katsu",
   email: "katsu.furugen@gmail.com",
   password: "123456"
 )
@@ -30,11 +32,22 @@ puts "Done creating katsu"
 
 puts ""
 puts "Creating yusuke"
-yusuke = User.create!(
+@yusuke = User.create!(
+  name: "Yusuke",
   email: "yusuke.ishida@gmail.com",
   password: "123456"
 )
 puts "Done creating yusuke"
+
+# create friendship
+@pins.friend_request(@katsu)
+@pins.friend_request(@yusuke)
+@katsu.friend_request(@yusuke)
+@katsu.accept_request(@pins)
+@yusuke.accept_request(@pins)
+@yusuke.accept_request(@katsu)
+
+puts "Done creating friendship"
 
 # creating moods
 
@@ -50,7 +63,7 @@ puts "Creating random mood for pins"
     activity_list: activities.sample,
     created_at: (rand*120).days.ago
   )
-  mood_1.user = pins
+  mood_1.user = @pins
   mood_1.save!
 end
 puts "Done creating random mood for pins"
@@ -64,7 +77,7 @@ puts "Creating bad mood for pins"
     activity_list: activities.sample,
     created_at: (rand(range)).days.ago
   )
-  mood_1.user = pins
+  mood_1.user = @pins
   mood_1.save!
 end
 puts "Done creating bad mood for pins"
@@ -77,7 +90,7 @@ puts "Creating mood for katsu"
     activity_list: activities.sample,
     created_at: (rand*120).days.ago
   )
-  mood_2.user = katsu
+  mood_2.user = @katsu
   mood_2.save!
 end
 puts "Done creating mood for katsu"
@@ -90,7 +103,7 @@ puts "Creating mood for yusuke"
     activity_list: activities.sample,
     created_at: (rand*120).days.ago
   )
-  mood_3.user = yusuke
+  mood_3.user = @yusuke
   mood_3.save!
 end
 puts "Done creating mood for yusuke"
