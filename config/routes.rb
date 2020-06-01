@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   get '/moods/:date', to: 'moods#show', as: :date_moods
   get '/insights', to: 'moods#insights', as: :insights
   get '/moods/new/smiley', to: 'moods#new_smiley', as: :new_smiley_mood
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      post 'callback', to: 'line_bot#callback'
+    end
+  end
 end

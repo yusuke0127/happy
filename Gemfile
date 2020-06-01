@@ -38,6 +38,7 @@ gem 'pundit'
 gem "simple_calendar", "~> 2.0"
 gem 'simple_form'
 gem 'bullet', group: 'development'
+gem 'line-bot-api'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
