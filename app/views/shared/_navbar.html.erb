@@ -20,6 +20,7 @@
         <i class="far fa-user"></i>
       <% end %>
       <div class="dropdown-menu">
+        <%= link_to "LINE",display_qr_code_path  %>
         <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
           <i class="fas fa-power-off"></i>
         <% end %>
