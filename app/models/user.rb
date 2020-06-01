@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_friendship
   has_many :moods, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
