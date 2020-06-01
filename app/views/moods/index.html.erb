@@ -30,23 +30,36 @@
       </button>
     <% end %>
   </div>
-  <h5 style="font-weight: 600; margin-top: 20px; color: #2b2b2b; margin-left: 6px;">Your Recent Moods</h5>
-  <% @moods.count == 0 ? waiting_message = "Waiting for your first mood entry :)" : waiting_message = '' %>
-
   <% messages = [] %>
   <% @five_good_activities.each do |activity| %>
-  <%   if  @todays_activities.include?(activity) == false   %>
-  <%     messages << "#{activity.capitalize} is one of your favorite activities which makes you feel fabulous. Why don't you do it today?" %>
-  <%   end %>
+    <%   if  @todays_activities.include?(activity) == false   %>
+      <%     messages << "#{activity.capitalize} is one of your fabulous activities! Why don't you do it today?" %>
+    <%   end %>
   <% end %>
+  <div class="suggestion-card">
+    <div class="suggestion-card-header d-flex justify-content-start">
+      <i class="fas fa-lightbulb"></i>
+      <p>TIPS</p>
+    </div>
+    <div class="suggestion-card-body">
+      <p><%= messages.sample %></p>
+    </div>
+  </div>
+  <!--   <div class="activity-suggestion-card">
+    <p><%= messages.sample %></p>
+  </div> -->
+  <h5 style="font-weight: 600; margin-top: 20px; color: #2b2b2b; margin-left: 6px;">Your Recent Moods</h5>
+  <% @moods.count == 0 ? waiting_message = "+ Waiting for your today's mood entry!" : waiting_message = '' %>
   <%# raise %>
-  <%= waiting_message %>
-  <%= messages.sample %>
-
-
+  <div class="entry-suggestion-card">
+    <%= link_to new_smiley_mood_path do %>
+      <p><%= waiting_message %></p>
+    <% end %>
+  </div>
   <%# raise %>
-
-
+  <% @friends.each do |friend| %>
+    <%= friend.name %>
+  <% end %>
   <% @moods.each do |mood| %>
     <div class="card-product">
       <h5 class="text-right mb-0 mt-4 mr-3"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>

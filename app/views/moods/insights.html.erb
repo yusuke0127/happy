@@ -1,5 +1,7 @@
 <div class="container mt-3">
-  <h2>Insights</h2>
+  <div class="insight-title">
+    <h4>Insights</h4>
+  </div>
   <ul class="nav nav-pills mb-3 d-flex text-center" id="pills-tab" role="tablist">
     <li class="nav-item rounded-lg flex-fill">
       <a class="nav-link active" id="pills-week-tab" data-toggle="pill" href="#pills-week" role="tab" aria-controls="pills-week" aria-selected="true">Week</a>
@@ -14,89 +16,91 @@
   <div class="tab-content d-flex justify-content-center" id="pills-tabContent">
     <!-- week content -->
     <div class="tab-pane fade show active" id="pills-week" role="tabpanel" aria-labelledby="pills-week-tab">
+      <h4>Average Mood</h4>
       <% today = Date.today %>
-      <p><%= today.at_beginning_of_week.strftime("%b %e %Y") %> - <%= today.at_end_of_week.strftime("%b %e %Y") %></p>
-      <h4>This Week Mood Chart</h4>
+      <p><%= today.at_beginning_of_week.strftime("%b %e") %> - <%= today.at_end_of_week.strftime("%b %e") %></p>
       <div class="average-container">
         <!-- sample -->
         <%#= column_chart({ Sun: 47, Mon: 42, Tue: 25, Wed: 20, Thu: 22, Fri: 20, Sat: 34}) %>
         <%#= column_chart({ 1st week: 47, 2nd week: 42, 3rd week: 25, 4th week: 20, 5th week: 20}) %>
         <%#= column_chart({ jan: 47, feb: 42, 3rd week: 25, 4th week: 20, 5th week: 20}) %>
         <div class="reference-rating">
-          <p>0 - <i class="far fa-sad-cry"></i></p>
-          <p>1 - <i class="far fa-meh"></i></p>
-          <p>2 - <i class="far fa-smile"></i></p>
-          <p>3 - <i class="far fa-laugh-beam"></i></p>
-          <p>4 - <i class="far fa-grin-hearts"></i></p>
+          <i class="far fa-grin-hearts"></i>
+          <i class="far fa-laugh-beam"></i>
+          <i class="far fa-smile"></i>
+          <i class="far fa-meh"></i>
+          <i class="far fa-sad-cry"></i>
         </div>
-        <%= line_chart(@week_hash, colors: ["#E67E22", "#E67E22"], width: "375px", height: "300px", min: 0, max: 4, ytitle: "Average Mood") %>
+        <%= line_chart(@week_hash, colors: ["#98d3d6"], width: "375px", height: "300px", min: 0, max: 4,  library: { scales: { yAxes: [{ gridLines: { display: true }, ticks: { maxTicksLimit: 5, display: false, stepSize: 1 } }]}}) %>
       </div>
       <div class="top-activities-container">
         <div class="cards-container">
-          <h4>Top 5 Weekly Activities</h4>
-          <% @week_activities_count.each_with_index do |activity, index|%>
-            <% n = index + 1 %>
-            <div class="activity-card color-<%= n %>">
-              <div>
-                <p><%=  activity[0]%></p>
+          <h4>Activity Count</h4>
+          <div class="activity-list-year">
+            <% @week_activities_count.each do |activity|%>
+              <div class="notification">
+                <p><%= activity[0] %></p>
+                <span class="badge"><%= activity[1] %></span>
               </div>
-              <div>
-                <p><%= activity[1]  %>times</p>
-              </div>
-            </div>
-            <% n += 1 %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <!-- month content -->
     <div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
+      <h4>Average Mood</h4>
       <% today = Date.today %>
-      <p><%= today.at_beginning_of_month.strftime("%b %e %Y") %> - <%= today.at_end_of_month.strftime("%b %e %Y") %></p>
-      <h4>This Month Moods</h4>
+      <p><%= today.at_beginning_of_month.strftime("%b %e") %> - <%= today.at_end_of_month.strftime("%b %e") %></p>
       <div class="average-container">
-        <%= column_chart(@month_hash, colors: ["#E67E22", "#E67E22"]) %>
+        <div class="reference-rating">
+          <i class="far fa-grin-hearts"></i>
+          <i class="far fa-laugh-beam"></i>
+          <i class="far fa-smile"></i>
+          <i class="far fa-meh"></i>
+          <i class="far fa-sad-cry"></i>
+        </div>
+        <%= line_chart(@month_hash, colors: ["#98d3d6"], width: "375px", height: "300px", min: 0, max: 4,  library: { scales: { yAxes: [{ gridLines: { display: true }, ticks: { maxTicksLimit: 5, display: false, stepSize: 1 } }]}}) %>
       </div>
       <div class="top-activities-container">
         <div class="cards-container">
-          <h4>Top 5 Monthly Activities</h4>
-          <% @month_activities_count.each_with_index do |activity, index|%>
-            <% n = index + 1 %>
-            <div class="activity-card color-<%= n %>">
-              <div>
-                <p><%=  activity[0]%></p>
+          <h4>Activity Count</h4>
+          <div class="activity-list-year">
+            <% @month_activities_count.each do |activity|%>
+              <div class="notification">
+                <p><%= activity[0] %></p>
+                <span class="badge"><%= activity[1] %></span>
               </div>
-              <div>
-                <p><%= activity[1]  %>times</p>
-              </div>
-            </div>
-            <% n += 1 %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <!-- year content -->
     <div class="tab-pane fade" id="pills-year" role="tabpanel" aria-labelledby="pills-year-tab">
-      <p><%= (Date.today - 1.year).year %>/<%= (Date.today - 1.year).month %> - <%= Date.today.year %>/<%=Date.today.month %></p>
-      <h4>Previous Months Moods</h4>
+      <h4>Average Mood</h4>
+      <p><%= (Date.today - 1.year).strftime("%b") %> <%= (Date.today - 1.year).year %> - <%= Date.today.strftime("%b") %> <%= Date.today.year %></p>
       <div class="average-container">
-        <%= column_chart(@year_hash, colors: ["#E67E22", "#E67E22"]) %>
+        <div class="reference-rating-year">
+          <i class="far fa-grin-hearts"></i>
+          <i class="far fa-laugh-beam"></i>
+          <i class="far fa-smile"></i>
+          <i class="far fa-meh"></i>
+          <i class="far fa-sad-cry"></i>
+        </div>
+        <%= line_chart(@year_hash, colors: ["#98d3d6"], width: "375px", height: "300px", min: 0, max: 4,  library: { scales: { yAxes: [{ gridLines: { display: true }, ticks: { maxTicksLimit: 5, display: false, stepSize: 1 } }]}}) %>
       </div>
       <div class="top-activities-container">
         <div class="cards-container">
-          <h4>Top 5 Yearly Activities</h4>
-          <% @year_activities_count.each_with_index do |activity, index|%>
-            <% n = index + 1 %>
-            <div class="activity-card color-<%= n %>">
-              <div>
-                <p><%=  activity[0]%></p>
+          <h4>Activity Count</h4>
+          <div class="activity-list-year">
+            <% @year_activities_count.each do |activity|%>
+              <div class="notification">
+                <p><%= activity[0] %></p>
+                <span class="badge"><%= activity[1] %></span>
               </div>
-              <div>
-                <p><%= activity[1]  %>times</p>
-              </div>
-            </div>
-            <% n += 1 %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

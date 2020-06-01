@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_friendship
   has_many :moods, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -39,17 +40,10 @@ class User < ApplicationRecord
     end.reverse
   end
 
-  def average_mood_for_insights(day)
-    results = moods.where('DATE(created_at) = ?', day)
-    return nil if results.empty?
-    average = results.average(:rating).to_f
-    Mood.ratings.keys[average]
-  end
-
   def week_average_mood(week_period)
     this_week = (week_period).to_a
     this_week.map do |date|
-      average_mood_for_insights(date)
+      average_mood_for(date)
     end
 
     # (Date.today.beginning_of_week..Date.today.end_of_week).to_a.map do |date|
