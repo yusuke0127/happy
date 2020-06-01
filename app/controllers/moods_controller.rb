@@ -1,6 +1,7 @@
 class MoodsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new_smiley]
 
+
   def index
     today = Date.today.beginning_of_day..Date.today.end_of_day
     @moods = policy_scope(Mood).order(created_at: :desc).includes([:taggings]).where(created_at: today)
@@ -174,4 +175,6 @@ class MoodsController < ApplicationController
     activities = fab_moods.map { |mood| mood.activity_list }.flatten
     @activity_frequency = frequency(activities)
   end
+
+
 end
