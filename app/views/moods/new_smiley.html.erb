@@ -1,8 +1,11 @@
 <div class="smiley-form-container">
   <div class="smiley-form-text">
     <h2>
-      How are you feeling today?
+      How are you feeling now?
     </h2>
+    <p>
+      <%= (Time.now).in_time_zone('Asia/Tokyo').strftime("%l : %M %P") %>
+    </p>
   </div>
   <%= simple_form_for(@mood) do |f| %>
     <%#= @mood %>

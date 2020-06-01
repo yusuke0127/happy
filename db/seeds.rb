@@ -64,7 +64,7 @@ puts "Done creating friendship"
 
 # creating moods
 
-activities = %w[family friends date party netflix reading gaming relax sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling hobbies sick movie TV arguement social\ media sex]
+activities = %w[family friends date party netflix reading gaming relax sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling hobbies sick movie TV argument social\ media sex]
 random_rating = [0, 1, 2, 3, 4]
 bad_rating = [0, 1]
 
