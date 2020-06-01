@@ -86,6 +86,72 @@
   font-weight: 400;
 }
 
+.entry-suggestion-card {
+  background-color: white;
+  color: #98d3d6;
+  width: 100%;
+  border-radius: 8px;
+  // height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+
+  }
+}
+
+.suggestion-card {
+  padding: 8px;
+  // border : 1px solid black;
+  margin-top: 16px;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+}
+
+.suggestion-card-header {
+  padding: 8px;
+  border-bottom : 1px solid #A5A7AC;
+  p {
+    margin-bottom: 0;
+    color: #A5A7AC;
+  }
+  .fa-lightbulb {
+    padding-top: 3px;
+    padding-right: 6px;
+    padding-left: 2px;
+    color: $yellow;
+  }
+}
+
+.suggestion-card-body {
+  padding: 8px;
+  p {
+    margin-bottom: 0;
+    color: #A5A7AC;
+  }
+}
+
+.activity-suggestion-card {
+  color: $yellow;
+  font-weight: bold;
+  width: 100%;
+  padding-left: 8px;
+  padding-top: 12px;
+  padding-bottom: 0;
+  p {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+
 .tags {
   display: flex;
   margin-top: 4px;
