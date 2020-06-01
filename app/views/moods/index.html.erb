@@ -7,11 +7,13 @@
   <!-- <h4 style="font-weight: 600;"><%#= Date.today.strftime("%a, %b %e") %></h4> -->
   <div class="overall">
     <div class="today-mood-both">
-      <h5 style="font-weight: 600;">Your Mood Today</h5>
-      <div class="emotion">
-        <!-- <p>Average</p> -->
-        <i class="<%= mood_fontawesome(@average) %> mt-2"></i>
-        <div class="message d-flex align-items-center">
+      <h5 style="font-weight: 600;">Your Average Mood</h5>
+      <div class="encourage-do">
+        <div class="emotion">
+          <!-- <p>Average</p> -->
+          <i class="<%= mood_fontawesome(@average) %>"></i>
+        </div>
+        <div class="message">
           <!-- <p>This is your today's average mood</p> -->
           <p><%= @message %></p>
         </div>
@@ -68,23 +70,23 @@
         <div class="emoji">
           <% case mood.rating %>
           <% when "awful" %>
-          <span style="font-size: 56px; margin-right: 24px">
+          <span style="font-size: 56px; margin-right: 28px">
             <i class="far fa-sad-cry"></i>
           </span>
           <% when "meh" %>
-          <span style="font-size: 56px; margin-right: 24px">
+          <span style="font-size: 56px; margin-right: 28px">
             <i class="far fa-meh"></i>
           </span>
           <% when "neutral" %>
-          <span style="font-size: 56px; margin-right: 24px">
+          <span style="font-size: 56px; margin-right: 28px">
             <i class="far fa-smile"></i>
           </span>
           <% when "happy" %>
-          <span style="font-size: 56px; margin-right: 24px">
+          <span style="font-size: 56px; margin-right: 28px">
             <i class="far fa-laugh-beam"></i>
           </span>
           <% when "fabulous" %>
-          <span style="font-size: 56px; margin-right: 24px">
+          <span style="font-size: 56px; margin-right: 28px">
             <i class="far fa-grin-hearts"></i>
           </span>
         <% else %>

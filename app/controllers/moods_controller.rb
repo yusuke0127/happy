@@ -181,15 +181,15 @@ class MoodsController < ApplicationController
   def create_message(average)
     case average
     when "awful"
-      message = "Things are getting better! "
+      message = "Don't give up! "
     when "meh"
-      message = "You may need to take some rest! "
+      message = "Love yourself more, silly! "
     when "neutral"
-      message = "Have a great day! "
+      message = "You can achieve more! "
     when "happy"
-      message = "You're doing great!! "
+      message = "You're doing good! "
     when "fabulous"
-      message = "You're awesome!! "
+      message = "Your best day yet! "
     end
     message
   end
