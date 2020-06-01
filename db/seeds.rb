@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 puts "Clearing database..."
 Mood.destroy_all
@@ -14,7 +15,11 @@ User.destroy_all
 # creating users
 
 puts "Creating pins"
+url = 'https://api.github.com/users/pins-thoo'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
 @pins = User.create!(
+  image_url: user['avatar_url'],
   name: "Pins",
   email: "pins.thoo@gmail.com",
   password: "123456"
@@ -23,7 +28,11 @@ puts "Done creating pins"
 
 puts ""
 puts "Creating katsu"
+url_2 = 'https://api.github.com/users/Katsulincon'
+katsu_serialized = open(url_2).read
+user_katsu = JSON.parse(katsu_serialized)
 @katsu = User.create!(
+  image_url: user_katsu['avatar_url'],
   name: "Katsu",
   email: "katsu.furugen@gmail.com",
   password: "123456"
@@ -32,7 +41,11 @@ puts "Done creating katsu"
 
 puts ""
 puts "Creating yusuke"
+url_3 = 'https://api.github.com/users/yusuke0127'
+yusuke_serialized = open(url_3).read
+user_yusuke = JSON.parse(yusuke_serialized)
 @yusuke = User.create!(
+  image_url: user_yusuke['avatar_url'],
   name: "Yusuke",
   email: "yusuke.ishida@gmail.com",
   password: "123456"
