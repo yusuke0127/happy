@@ -20,7 +20,7 @@
         <i class="far fa-user"></i>
       <% end %>
       <div class="dropdown-menu">
-        <%= link_to "LINE",display_qr_code_path  %>
+        <p class="pl-3"><%= link_to "LINE",display_qr_code_path  %></p>
         <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
           <i class="fas fa-power-off"></i>
           <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
