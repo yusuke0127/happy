@@ -1,7 +1,7 @@
-class SendMoodEventJob < ApplicationJob
+class SendFriendMessageJob < ApplicationJob
   queue_as :default
 
-  def perform(user_id)
+  def perform(user_id, friend_name)
     user = User.find(user_id)
 
     @client ||= Line::Bot::Client.new do |config|
@@ -9,7 +9,7 @@ class SendMoodEventJob < ApplicationJob
      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
     end
 
-    text = "Hey how was the event? Go to https://happyyou.xyz/ and log your mood!"
+    text = "Hey, your friend #{friend_name} feels unhappy today... \n Send them a message to cheer them up!"
     message = {
       type: 'text',
       text: text
@@ -17,7 +17,3 @@ class SendMoodEventJob < ApplicationJob
     @client.push_message(user.line_id, message)
   end
 end
-
-#migration for line_id string?
-#add line_cahhnel secret
-#add Channel access token

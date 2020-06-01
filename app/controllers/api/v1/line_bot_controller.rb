@@ -25,7 +25,7 @@ class Api::V1::LineBotController < Api::V1::BaseController
           else
             bot_response = {
               type: 'text',
-              text: "I'm a dumbass bot 🤖.\nCommands I know:\n- emails for registration\n- url"
+              text: "I'm a dumbass bot 🤖.\nCommands I know:\n- emails for registration"
             }
           end
           @client.reply_message(event['replyToken'], bot_response)

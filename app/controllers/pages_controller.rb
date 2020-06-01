@@ -8,4 +8,8 @@ class PagesController < ApplicationController
   def test
 
   end
+
+  def qr_code
+
+  end
 end
