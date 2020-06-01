@@ -57,9 +57,6 @@
     <% end %>
   </div>
   <%# raise %>
-  <% @friends.each do |friend| %>
-    <%= friend.name %>
-  <% end %>
   <% @moods.each do |mood| %>
     <div class="card-product">
       <h5 class="text-right mb-0 mt-4 mr-3"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
