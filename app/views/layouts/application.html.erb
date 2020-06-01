@@ -4,7 +4,6 @@
     <title>Happy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable"  content="yes">
@@ -14,15 +13,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: false %>
     <%= javascript_pack_tag 'chartkick' %>
   </head>
-
   <body>
     <%= render 'shared/flashes' %>
     <div class="main-container">
-
-        <%= yield %>
-
+      <%= yield %>
+      <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
     </div>
     <%= render 'shared/navbar' %>
-
+    <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
   </body>
 </html>
