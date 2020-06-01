@@ -22,9 +22,11 @@
       <div class="dropdown-menu">
         <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
           <i class="fas fa-power-off"></i>
+          <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
         <% end %>
       <% else %>
         <%#= link_to "Login", new_user_session_path, class: "nav-link-login" %>
+        <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
       </div>
     </div>
   <% end %>
