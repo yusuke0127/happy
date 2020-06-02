@@ -1,3 +1,6 @@
+.community-container {
+  margin: 0px 16px;
+}
 .community-title h4 {
   margin: 24px 36px;
   font-weight: 600;
@@ -7,7 +10,8 @@
 
 .friend-container {
   display: flex;
-  margin: 40px 36px;
+  margin: 40px 32px;
+  flex-wrap: wrap;
 }
 
 img.square-avatar {
@@ -37,7 +41,7 @@ img.square-avatar {
   height: 120px;
   display: flex;
   align-items: center;
-  margin: 0px 20px;
+  margin: -10px 20px;
 }
 
 p.time-mood {
@@ -72,9 +76,13 @@ i.fab.fa-line.community {
   // right: 85px;
   font-size: 28px;
   color: #3dd304;
+  opacity: 0.6;
   // position: absolute;
   //   right: 88px;
   //   top: 337px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .timeline-line-heart {
@@ -82,6 +90,8 @@ i.fab.fa-line.community {
   margin-top: 28px;
   display: grid;
   align-items: center;
+  height: 10px;
+
 }
 
 

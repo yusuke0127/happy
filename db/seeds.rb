@@ -52,6 +52,31 @@ user_yusuke = JSON.parse(yusuke_serialized)
 )
 puts "Done creating yusuke"
 
+puts ""
+puts "Creating yann"
+url_3 = 'https://api.github.com/users/yannklein'
+yann_serialized = open(url_3).read
+user_yann = JSON.parse(yann_serialized)
+@yann = User.create!(
+  image_url: user_yann['avatar_url'],
+  name: "Yann",
+  email: "yann.klein@gmail.com",
+  password: "123456"
+)
+puts "Done creating yann"
+
+puts ""
+puts "Creating doug"
+url_3 = 'https://api.github.com/users/dmbf29'
+doug_serialized = open(url_3).read
+user_doug = JSON.parse(doug_serialized)
+@doug = User.create!(
+  image_url: user_doug['avatar_url'],
+  name: "Doug",
+  email: "doug.berkley@gmail.com",
+  password: "123456"
+)
+puts "Done creating doug"
 # create friendship
 @pins.friend_request(@katsu)
 @pins.friend_request(@yusuke)
@@ -59,6 +84,24 @@ puts "Done creating yusuke"
 @katsu.accept_request(@pins)
 @yusuke.accept_request(@pins)
 @yusuke.accept_request(@katsu)
+
+@pins.friend_request(@doug)
+@pins.friend_request(@yann)
+@doug.accept_request(@pins)
+@yann.accept_request(@pins)
+
+@katsu.friend_request(@doug)
+@katsu.friend_request(@yann)
+@doug.accept_request(@katsu)
+@yann.accept_request(@katsu)
+
+@yusuke.friend_request(@doug)
+@yusuke.friend_request(@yann)
+@doug.accept_request(@yusuke)
+@yann.accept_request(@yusuke)
+
+@doug.friend_request(@yann)
+@yann.accept_request(@doug)
 
 puts "Done creating friendship"
 
