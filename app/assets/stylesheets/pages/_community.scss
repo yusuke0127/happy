@@ -58,9 +58,9 @@ p.time-mood {
 }
 
 i.far.fa-heart {
-  position: absolute;
-  right: 60px;
-  font-size: 18px;
+  // position: absolute;
+  // right: 60px;
+  font-size: 24px;
   color: #2b2b2b;
   &:hover {
     color: pink;
@@ -68,11 +68,22 @@ i.far.fa-heart {
 }
 
 i.fab.fa-line.community {
-  position: absolute;
-  right: 85px;
-  font-size: 40px;
+  // position: absolute;
+  // right: 85px;
+  font-size: 28px;
   color: #3dd304;
+  // position: absolute;
+  //   right: 88px;
+  //   top: 337px;
 }
+
+.timeline-line-heart {
+  margin-left: auto;
+  margin-top: 28px;
+  display: grid;
+  align-items: center;
+}
+
 
 .tags-community p {
   font-size: 14px;
