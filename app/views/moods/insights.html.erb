@@ -17,7 +17,7 @@
     <!-- week content -->
     <div class="tab-pane fade show active" id="pills-week" role="tabpanel" aria-labelledby="pills-week-tab">
       <h4>Average Mood</h4>
-      <% today = Date.today %>
+      <% today = (Date.today - 6) %>
       <p><%= today.at_beginning_of_week.strftime("%b %e") %> - <%= today.at_end_of_week.strftime("%b %e") %></p>
       <div class="average-container">
         <!-- sample -->
