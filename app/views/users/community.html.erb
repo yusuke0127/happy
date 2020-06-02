@@ -23,10 +23,14 @@
           <p><%= mood.activity_list %></p>
         </div>
       </div>
-      <i class="far fa-heart"></i>
-      <%= link_to "http://line.me/ti/p/~ishida_yu27" do %>
-        <i class="fab fa-line community"></i>
-      <% end %>
+      <div class="timeline-line-heart">
+        <%= link_to "http://line.me/ti/p/~ishida_yu27" do %>
+          <i class="fab fa-line community"></i>
+        <% end %>
+        <%= link_to "" do  %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      </div>
     </div>
     <hr>
   <% end %>
