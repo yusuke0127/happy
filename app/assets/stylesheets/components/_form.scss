@@ -96,8 +96,9 @@
 
 .smiley-form-container {
   text-align: center;
-  padding-top: 240px;
+  padding-top: 355px;
   .smiley-form-text {
+    position: relative;
     margin: 24px;
     padding-bottom: 32px;
 
@@ -105,13 +106,13 @@
   h2 {
     font-weight: lighter;
   }
-
   p {
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 20px;
     margin-top: 20px;
-    color: #2b2b2b;
-    opacity: .4;
+    color: white;
+    text-align: left;
+    margin-left: 20px;
   }
 
   fieldset {

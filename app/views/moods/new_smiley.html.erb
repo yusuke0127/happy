@@ -1,8 +1,6 @@
 <div class="smiley-form-container">
+  <%= image_tag("final-2.png", alt: "background new mood", class: "new-mood-img") %>
   <div class="smiley-form-text">
-    <h2>
-      How are you feeling now?
-    </h2>
     <p>
       <%= (Time.now).in_time_zone('Asia/Tokyo').strftime("%l : %M %P") %>
     </p>
