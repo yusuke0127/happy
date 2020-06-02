@@ -4,8 +4,9 @@ class Api::V1::LineBotController < Api::V1::BaseController
   # skip_before_action :authenticate_user!, only: [:callback]
   # skip_before_action :verify_authenticity_token, only: [:callback]
   before_action :client, only: [:callback]
-  after_action :verify_authorized, except: :callback
+  skip_after_action :verify_authorized, only: [:callback]
   def callback
+    # binding.pry
     body = request.body.read
     signature = request.env['HTTP_X_LINE_SIGNATURE']
     unless @client.validate_signature(body, signature)
