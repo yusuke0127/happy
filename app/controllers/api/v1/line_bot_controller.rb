@@ -6,6 +6,7 @@ class Api::V1::LineBotController < Api::V1::BaseController
   before_action :client, only: [:callback]
   skip_after_action :verify_authorized, only: [:callback]
   def callback
+    p @client
     # binding.pry
     body = request.body.read
     signature = request.env['HTTP_X_LINE_SIGNATURE']
@@ -18,6 +19,7 @@ class Api::V1::LineBotController < Api::V1::BaseController
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
+          puts user_message
           user_message = event.message['text'].strip
           if user_message.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i) #email
             bot_response = handle_registration(user_message)
@@ -29,10 +31,12 @@ class Api::V1::LineBotController < Api::V1::BaseController
               text: "I'm a dumbass bot 🤖.\nCommands I know:\n- emails for registration"
             }
           end
+          puts "sending message"
           @client.reply_message(event['replyToken'], bot_response)
         end
       end
     }
+    puts "rendering status"
     render status: 200, json: {}
   end
   private
