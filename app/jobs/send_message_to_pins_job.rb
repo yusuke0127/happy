@@ -9,7 +9,7 @@ class SendMessageToPinsJob < ApplicationJob
      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
     end
 
-    text = "You have an upcoming event today! \n How are you feeling? \nGo to https://www.happyyou.xyz/ and log your mood!"
+    text = "You have an upcoming event(Demo Day) today! \n How are you feeling? \nGo to https://www.happyyou.xyz/ and log your mood!"
     message = {
       type: 'text',
       text: text
