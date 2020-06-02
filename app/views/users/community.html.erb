@@ -1,37 +1,36 @@
-<div class="community-title">
-  <h4>Friends (<%= @friends.count %>)</h4>
-</div>
-<div class="friend-container">
-  <% @friends.each do |friend| %>
-    <div class="friend-list">
-      <%= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
-      <%= friend.name %>
-    </div>
-  <% end %>
-</div>
-<div class="community-title">
-  <h4>Timeline</h4>
-</div>
-<div class="card-happenings">
-  <% @moods.each do |mood| %>
-    <div class="card-list-mood">
-      <%= image_tag mood.user.image_url, class: "square-avatar", alt: "avatar-large" %>
-      <div class="mood-info">
-        <p class="time-mood"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></p>
-        <i class="<%= mood_fontawesome(mood.rating) %> mt-2"></i>
-        <div class="tags-community">
-          <p><%= mood.activity_list %></p>
+<div class="community-container">
+  <div class="community-title">
+    <h4>Friends (<%= @friends.count %>)</h4>
+  </div>
+  <div class="friend-container">
+    <% @friends.each do |friend| %>
+      <div class="friend-list">
+        <%= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
+        <%= friend.name %>
+      </div>
+    <% end %>
+  </div>
+  <div class="community-title">
+    <h4>Timeline</h4>
+  </div>
+  <div class="card-happenings">
+    <% @moods.each do |mood| %>
+      <div class="card-list-mood">
+        <%= image_tag mood.user.image_url, class: "square-avatar", alt: "avatar-large" %>
+        <div class="mood-info">
+          <p class="time-mood"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></p>
+          <i class="<%= mood_fontawesome(mood.rating) %> mt-2"></i>
+          <div class="tags-community">
+            <p><%= mood.activity_list %></p>
+          </div>
+        </div>
+        <div class="timeline-line-heart">
+          <%= link_to "http://line.me/ti/p/~ishida_yu27" do %>
+            <i class="fab fa-line community"></i>
+          <% end %>
         </div>
       </div>
-      <div class="timeline-line-heart">
-        <%= link_to "http://line.me/ti/p/~ishida_yu27" do %>
-          <i class="fab fa-line community"></i>
-        <% end %>
-        <%= link_to "" do  %>
-          <i class="far fa-heart"></i>
-        <% end %>
-      </div>
-    </div>
-    <hr>
-  <% end %>
+      <hr>
+    <% end %>
+  </div>
 </div>
