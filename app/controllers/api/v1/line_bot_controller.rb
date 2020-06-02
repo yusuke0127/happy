@@ -14,13 +14,15 @@ class Api::V1::LineBotController < Api::V1::BaseController
       error 400 do 'Bad Request' end
     end
     events = @client.parse_events_from(body)
+    p events
     events.each { |event|
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          puts user_message
+
           user_message = event.message['text'].strip
+          puts user_message
           if user_message.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i) #email
             bot_response = handle_registration(user_message)
           elsif user_message.match(/.*url.*/i)
