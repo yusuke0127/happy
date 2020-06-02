@@ -15,29 +15,50 @@
     <!--   <div class="circle-button">
       <%#= link_to "+", new_mood_path, class: "btn btn-ghost" %>
     </div> -->
-    <div class="dropup">
-      <%= link_to "user", class: "icon-color", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
-        <i class="far fa-user"></i>
+    <!-- The overlay -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <%= link_to display_qr_code_path do %>
+        <i class="fab fa-line"></i>
       <% end %>
-      <div class="dropdown-menu">
-        <p class="pl-3"><%= link_to "LINE",display_qr_code_path  %></p>
-        <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-          <i class="fas fa-power-off"></i>
-          <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
-        <% end %>
-        <%= link_to community_path(current_user), class: "dropdown-item" do %>
-          <i class="fas fa-users"></i>
-        <% end %>
-      <% else %>
-        <%#= link_to "Login", new_user_session_path, class: "nav-link-login" %>
-        <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
-      </div>
+      <%= link_to community_path(current_user) do %>
+        <i class="fas fa-users"></i>
+      <% end %>
+      <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+        <i class="fab fa-google"></i>
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-power-off"></i>
+      <% end %>
+      <%= image_tag current_user.image_url, class: "small-avatar", alt: "avatar-large" %>
     </div>
-  <% end %>
-  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776; </button>
+    </div>
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <!-- <div class="dropup">
+      <%#= link_to "user", class: "icon-color", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+        <i class="far fa-user"></i>
+      <%# end %>
+      <div class="dropdown-menu">
+        <p class="pl-3"><%#= link_to "LINE",display_qr_code_path  %></p>
+        <%#= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+          <i class="fas fa-power-off"></i>
+          <%#= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
+        <%# end %>
+        <%#= link_to community_path(current_user), class: "dropdown-item" do %>
+          <i class="fas fa-users"></i>
+        <%# end %>
+      <%# else %>
+        <%#= link_to "Login", new_user_session_path, class: "nav-link-login" %>
+        <%#= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path%>
+      </div> -->
+  </div>
+<% end %>
+<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> -->
-  <!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropup">
           <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -51,3 +72,15 @@
     <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
   <%# end %> -->
 </div>
+<script>
+  function openNav() {
+  document.getElementById("mySidebar").style.width = "80px";
+  document.getElementById("main").style.marginLeft = "8px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  }
+</script>
