@@ -189,3 +189,29 @@ mood_5 = Mood.new(
 mood_5.user = @katsu
 mood_5.save!
 puts "Done creating happy mood for today for Katsu"
+
+puts ""
+puts "Creating mood for today for doug"
+4.times do
+  mood_6 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at:  Date.today
+  )
+  mood_6.user = @doug
+  mood_6.save!
+end
+puts "Done creating mood for today for doug"
+
+puts ""
+puts "Creating mood for today for yann"
+4.times do
+  mood_7 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at:  Date.today
+  )
+  mood_7.user = @yann
+  mood_7.save!
+end
+puts "Done creating mood for today for yann"
