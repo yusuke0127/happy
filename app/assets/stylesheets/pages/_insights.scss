@@ -105,7 +105,7 @@
 .reference-rating {
   display: grid;
   position: absolute;
-  top: 213px;
+  top: 209px;
   left: 34px;
   i {
     margin-bottom: 41px;
@@ -132,4 +132,35 @@ canvas.chartjs-render-monitor {
   font-weight: 600;
   font-size: 20px;
   color: #2b2b2b;
+}
+
+
+svg.awful-3d-insights-emoji{
+  width: 1em;
+  height: 1em;
+  margin-bottom: 42px;
+}
+
+svg.meh-3d-insights-emoji{
+  width: 1em;
+  height: 1em;
+  margin-bottom: 42px;
+}
+svg.neutral-3d-insights-emoji{
+  width: 1em;
+  height: 1em;
+  margin-bottom: 42px;
+
+}
+
+svg.happy-3d-insights-emoji{
+ width: 1em;
+  height: 1em;
+  margin-bottom: 42px;
+}
+
+svg.fab-3d-insights-emoji{
+  width: 1em;
+  height: 1em;
+  margin-bottom: 42px;
 }
