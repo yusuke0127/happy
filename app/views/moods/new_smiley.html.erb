@@ -1,5 +1,5 @@
 <div class="smiley-form-container">
-  <%= image_tag("final-2.png", alt: "background new mood", class: "new-mood-img") %>
+  <%= image_tag("final-3.png", alt: "background new mood", class: "new-mood-img") %>
   <div class="smiley-form-text">
     <p>
       <%= (Time.now).in_time_zone('Asia/Tokyo').strftime("%l : %M %P") %>
@@ -128,6 +128,15 @@
           </label>
         </div>
       </fieldset>
+      <div class="emotion-line">
+        <ul>
+          <li class="awful-list">awful</li>
+          <li class="meh-list">meh</li>
+          <li class="neutral-list">neutral</li>
+          <li class="happy-list">happy</li>
+          <li class="fab-list">fabulous</li>
+        </ul>
+      </div>
     </div>
     <%#= link_to new_mood_path(rating: )  %>
     <%#= @mood %>

@@ -1,11 +1,57 @@
+.emotion-line {
+  position: absolute;
+  ul {
+    display: flex;
+    list-style: none;
+  }
+}
+
+.fab-list {
+  position: absolute;
+  right: -336px;
+  bottom: -4px;
+  font-size: 14px;
+  color: $green;
+}
+
+.happy-list {
+  position: absolute;
+  right: -259px;
+  bottom: -4px;
+  font-size: 14px;
+  color: $blue;
+}
+
+.neutral-list {
+  position: absolute;
+  right: -194px;
+  bottom: -4px;
+  font-size: 14px;
+  color: $yellow;
+}
+
+.meh-list {
+  position: absolute;
+  right: -116px;
+  bottom: -4px;
+  font-size: 14px;
+  color: $red;
+}
+
+.awful-list {
+  position: absolute;
+  right: -50px;
+  bottom: -4px;
+  font-size: 14px;
+  color: $purple;
+}
+
 .new-mood-img {
   position: fixed;
   top: 0;
   width: 100%;
   left: 0;
 }
-
-
 
 #smiley-container {
   .form-check-input {
@@ -142,9 +188,9 @@ form#smileys input[type="radio"] {
 
 
 svg {
-  margin: 4px;
-  width: 3em;
-  height: 3em;
+  margin: 0px;
+  width: 4em;
+  height: 4em;
 }
 
 .smiley-svg-div {
@@ -153,8 +199,8 @@ svg {
 }
 
 svg.awful-3d {
-  width: 3em;
-  height: 3em;
+  width: 4em;
+  height: 4em;
   opacity: 0.8;
   // display: inline-block;
     // margin: 0 0.5rem;
@@ -197,8 +243,8 @@ svg.awful-3d {
 }
 
 svg.meh-3d {
-  width: 3em;
-  height: 3em;
+  width: 4em;
+  height: 4em;
   opacity: 0.8;
   .face {
     animation: leftToRight 0.4s linear infinite alternate-reverse;
