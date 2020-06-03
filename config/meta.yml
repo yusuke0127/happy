@@ -1,0 +1,4 @@
+meta_product_name: "Happy"
+meta_title: "Happy - Easy mood tracking app for everyone"
+meta_description: "Track your moods easily and better feelings everyday"
+meta_image: "meta.jpeg" # should exist in `app/assets/images/`

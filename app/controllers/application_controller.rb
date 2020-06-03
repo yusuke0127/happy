@@ -31,4 +31,8 @@ class ApplicationController < ActionController::Base
     # Whichever Controller/Action needed to handle what comes next
     redirect_to new_event_path()
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
