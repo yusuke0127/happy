@@ -23,7 +23,7 @@ const smileyAnimate = () => {
       console.log(div.parentElement.previousElementSibling);
       div.classList.toggle("smiley-svg-div");
       setTimeout(() => {
-        div.parentElement.previousElementSibling.click()}, 1000);
+        div.parentElement.previousElementSibling.click()}, 2000);
     })
   })
 }
