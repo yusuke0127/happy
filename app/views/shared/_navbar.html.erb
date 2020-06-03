@@ -30,7 +30,11 @@
       <%= link_to destroy_user_session_path, method: :delete do %>
         <i class="fas fa-power-off"></i>
       <% end %>
-      <%= image_tag current_user.image_url, class: "small-avatar", alt: "avatar-large" %>
+      <% if current_user.image_url.nil?  %>
+        <%= image_tag 'user-empty-avatar.png', alt: "alttext", class: "small-avatar" %>
+      <% else %>
+        <%= image_tag current_user.image_url, class: "small-avatar", alt: "avatar-large" %>
+      <% end %>
     </div>
     <div id="main">
       <button class="openbtn" onclick="openNav()">&#9776; </button>

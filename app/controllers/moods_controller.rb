@@ -43,11 +43,16 @@ class MoodsController < ApplicationController
     this_week = Date.today.beginning_of_week..Date.today.end_of_week
     last_week = (Date.today - 6).beginning_of_week..(Date.today - 6).end_of_week
 
-    average_moods_current_week = current_user.moods.where(created_at: (this_week)).average(:rating).round
-    @this_week_mood = Mood.ratings.keys[average_moods_current_week]
+    average_moods_current_week = current_user.moods.where(created_at: (this_week)).average(:rating)&.round
 
-    average_moods_last_week = current_user.moods.where(created_at: (last_week)).average(:rating).round
-    @last_week_mood = Mood.ratings.keys[average_moods_last_week]
+    if average_moods_current_week != nil
+      @this_week_mood = Mood.ratings.keys[average_moods_current_week]
+    end
+
+    average_moods_last_week = current_user.moods.where(created_at: (last_week)).average(:rating)&.round
+    if average_moods_last_week != nil
+      @last_week_mood = Mood.ratings.keys[average_moods_last_week]
+    end
   end
 
 
