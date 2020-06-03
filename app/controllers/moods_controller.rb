@@ -61,7 +61,9 @@ class MoodsController < ApplicationController
     @mood = Mood.new(mood_params)
     @mood.user = current_user
     authorize @mood
-    # raise
+    params[:mood][:custom_activities].each do |activity|
+      @mood.activity_list.add(activity)
+    end
     if @mood.save
       redirect_to moods_path
     else
