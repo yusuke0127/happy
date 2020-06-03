@@ -79,11 +79,11 @@ ActiveRecord::Schema.define(version: 2020_06_03_063717) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "line_id"
     t.string "name"
     t.string "access_token"
     t.datetime "expires_at"
     t.string "refresh_token"
+    t.string "line_id"
     t.string "image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
