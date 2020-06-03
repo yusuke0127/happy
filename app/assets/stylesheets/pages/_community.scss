@@ -42,14 +42,16 @@ img.square-avatar {
   display: flex;
   align-items: center;
   margin: -10px 20px;
+  position: relative;
 }
 
 p.time-mood {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
   color: #222222;
   position: absolute;
-  right: 60px;
+  right: 0;
+  top: 16px;
 }
 
 .card-list-mood .mood-info {
@@ -57,7 +59,7 @@ p.time-mood {
 }
 
 .mood-info i {
-  font-size: 40px;
+  font-size: 56px;
   margin-left: 12px;
 }
 
@@ -107,5 +109,6 @@ i.fab.fa-line.community {
   opacity: .7;
   margin-left: 12px;
   margin-top: 10px;
+  margin-bottom: 8px;
 }
 
