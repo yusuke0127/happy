@@ -1,3 +1,38 @@
+.activity-pill {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+
+.mood-form-activity {
+  text-align: center;
+  margin-top: 32px;
+}
+
+svg.awful-3d-activity {
+  width: 3em;
+  height: 3em;
+}
+
+svg.meh-3d-activity {
+  width: 3em;
+  height: 3em;
+}
+svg.neutral-3d-activity {
+  width: 3em;
+  height: 3em;
+}
+svg.happy-3d-activity {
+  width: 3em;
+  height: 3em;
+}
+svg.fab-3d-activity {
+  width: 3em;
+  height: 3em;
+}
+
+
+
 .form-control {
     display: block;
     width: 340px;
@@ -10,7 +45,7 @@
     background-color: #FFFFFF;
     background-clip: padding-box;
     border: 1px solid #aaa;
-    border-radius: 20px;
+    border-radius: 4px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     margin-left: 4px;
     margin-top: 20px;
@@ -18,21 +53,20 @@
 }
 
 textarea.form-control {
-    height: 38px;
-    text-align: center;
+    // text-align: center;
     opacity: .7;
     font-family: Source Sans Pro, sans-serif;
 }
 
 .form-group {
-  margin-left: 14px;
-  margin-bottom: 40px;
+  margin: 14px;
+  // margin-bottom: 40px;
 }
 
 
 .form-container {
   margin: 20px 20px;
-  padding-top: 70px;
+  padding-top: 20px;
   text-align: center;
 
   // left: 50%;
@@ -108,12 +142,12 @@ textarea.form-control {
 
 }
 .form-btn-container {
-    margin-top: 20px;
+    margin-top: -3px;
   .form-btn {
     border: 1px solid #98d3d6;
     border-radius: 50%;
     background-color: #98d3d6;
-    padding: 20px 16px;
+    padding: 18px 22px;
     color: white;
     &:hover {
       background-color: #69c3c7;
@@ -150,7 +184,7 @@ textarea.form-control {
   }
 
   fieldset {
-    margin-left: 12px;
+    margin-left: 18px;
 
   }
 
