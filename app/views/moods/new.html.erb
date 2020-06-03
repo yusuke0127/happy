@@ -1,4 +1,6 @@
-<i class="<%= mood_fontawesome(params[:rating]) %>"></i>
+<div class="mood-form-activity">
+  <%= render 'shared/mood_render', average: params[:rating] %>
+</div>
 <div class="form-container">
   <div class="form-text-activity">
     <h2>
@@ -26,7 +28,9 @@
       class: 'select2', multiple: 'multiple' %>
       <%= f.input :note, as: :text, placeholder: 'Add Note...', label: false %>
       <div class="form-btn-container">
-        <%= f.submit "Save", class: "form-btn" %>
+        <%= button_tag :submit, class: 'form-btn' do %>
+          <i class="fas fa-check"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
