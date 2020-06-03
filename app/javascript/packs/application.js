@@ -30,10 +30,11 @@ import "bootstrap";
 import { clickSmileyLink } from '../components/smileylink';
 // import { smileyClassToggle } from '../components/smiley_selector';
 import { smileyAnimate } from '../components/smiley_bounce';
+import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   clickSmileyLink();
   smileyAnimate();
-  // smileyClassToggle();
+  initSelect2();
 });
