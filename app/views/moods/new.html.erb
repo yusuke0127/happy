@@ -1,3 +1,4 @@
+<i class="<%= mood_fontawesome(params[:rating]) %>"></i>
 <div class="form-container">
   <div class="form-text-activity">
     <h2>
@@ -23,6 +24,7 @@
         # sort_by { |tzinfo| tzinfo.name },
       :name, :name),
       class: 'select2', multiple: 'multiple' %>
+      <%= f.input :note, as: :text, placeholder: 'Add Note...', label: false %>
       <div class="form-btn-container">
         <%= f.submit "Save", class: "form-btn" %>
       </div>

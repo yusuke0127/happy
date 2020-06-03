@@ -94,7 +94,7 @@ class MoodsController < ApplicationController
   private
 
   def mood_params
-    params.require(:mood).permit(:rating, activity_list: [])
+    params.require(:mood).permit(:rating, :note, activity_list: [])
   end
 
   def activity_frequency(period)
