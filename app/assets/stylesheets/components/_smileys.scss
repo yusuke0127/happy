@@ -29,141 +29,106 @@ form#smileys input[type="radio"] {
 
 
 
-form#smileys input[type="radio"]:hover,
-form#smileys input[type="radio"]:checked {
-  filter: grayscale(0);
-  opacity: 0.5;
-}
-
-form#smileys input[type="radio"]:focus {
-  outline: 0;
-}
-
-form#smileys input[type="radio"].awful {
-  background: url("awful-face.png") center;
-  background-size: cover;
-}
-
-
-form#smileys input[type="radio"].meh {
-  background: url("sad-face.png") center;
-  background-size: cover;
-}
-form#smileys input[type="radio"].neutral {
-  background: url("neutral-face.png") center;
-  background-size: cover;
-}
-
-
-form#smileys input[type="radio"].happy {
-  background: url("happy-face.png") center;
-  background-size: cover;
-}
-
-form#smileys input[type="radio"].fab {
-  background: url("fab-photo.png") center;
-  background-size: cover;
-}
 
 // smiley divs
 
-.hide-checkbox {
-  display: none;
-}
-.visibility-hidden {
-  visibility: hidden;
-}
+// .hide-checkbox {
+//   display: none;
+// }
+// .visibility-hidden {
+//   visibility: hidden;
+// }
 
-.awful {
-  -webkit-appearance: none;
-  width: 90px;
-  height: 90px;
-  border: none;
-  cursor: pointer;
-  transition: border .2s ease;
-  filter: grayscale(100%);
-  margin: 0 5px;
-  transition: all .2s ease;
-  background: url("awful-face.png") center;
-  background-size: cover;
-  // color: #E23D18;
-}
+// .awful {
+//   -webkit-appearance: none;
+//   width: 90px;
+//   height: 90px;
+//   border: none;
+//   cursor: pointer;
+//   transition: border .2s ease;
+//   filter: grayscale(100%);
+//   margin: 0 5px;
+//   transition: all .2s ease;
+//   background: url("awful-face.png") center;
+//   background-size: cover;
+//   // color: #E23D18;
+// }
 
-.awful:hover {
-  opacity: 0.5;
-}
+// .awful:hover {
+//   opacity: 0.5;
+// }
 
-.meh {
-  -webkit-appearance: none;
-  width: 90px;
-  height: 90px;
-  border: none;
-  cursor: pointer;
-  transition: border .2s ease;
-  filter: grayscale(100%);
-  margin: 0 5px;
-  transition: all .2s ease;
-  background: url("sad-face.png") center;
-  background-size: cover;
-}
+// .meh {
+//   -webkit-appearance: none;
+//   width: 90px;
+//   height: 90px;
+//   border: none;
+//   cursor: pointer;
+//   transition: border .2s ease;
+//   filter: grayscale(100%);
+//   margin: 0 5px;
+//   transition: all .2s ease;
+//   background: url("sad-face.png") center;
+//   background-size: cover;
+// }
 
-.meh:hover {
-  opacity: 0.5;
-}
+// .meh:hover {
+//   opacity: 0.5;
+// }
 
-.neutral {
-  -webkit-appearance: none;
-  width: 90px;
-  height: 90px;
-  border: none;
-  cursor: pointer;
-  transition: border .2s ease;
-  filter: grayscale(100%);
-  margin: 0 5px;
-  transition: all .2s ease;
-  background: url("neutral-face.png") center;
-  background-size: cover;
-}
+// .neutral {
+//   -webkit-appearance: none;
+//   width: 90px;
+//   height: 90px;
+//   border: none;
+//   cursor: pointer;
+//   transition: border .2s ease;
+//   filter: grayscale(100%);
+//   margin: 0 5px;
+//   transition: all .2s ease;
+//   background: url("neutral-face.png") center;
+//   background-size: cover;
+// }
 
-.neutral:hover {
-  opacity: 0.5;
-}
+// .neutral:hover {
+//   opacity: 0.5;
+// }
 
-.happy {
-  -webkit-appearance: none;
-  width: 90px;
-  height: 90px;
-  border: none;
-  cursor: pointer;
-  transition: border .2s ease;
-  filter: grayscale(100%);
-  margin: 0 5px;
-  transition: all .2s ease;
-  background: url("happy-face.png") center;
-  background-size: cover;
-}
+// .happy {
+//   -webkit-appearance: none;
+//   width: 90px;
+//   height: 90px;
+//   border: none;
+//   cursor: pointer;
+//   transition: border .2s ease;
+//   filter: grayscale(100%);
+//   margin: 0 5px;
+//   transition: all .2s ease;
+//   background: url("happy-face.png") center;
+//   background-size: cover;
+// }
 
-.happy:hover {
-  opacity: 0.5;
-}
+// .happy:hover {
+//   opacity: 0.5;
+// }
 
-.fabulous {
-  -webkit-appearance: none;
-  width: 90px;
-  height: 90px;
-  border: none;
-  cursor: pointer;
-  transition: border .2s ease;
-  filter: grayscale(100%);
-  margin: 0 5px;
-  transition: all .2s ease;
-  background: url("fab-photo.png") center;
-  background-size: cover;
-}
+// .fabulous {
+//   -webkit-appearance: none;
+//   width: 90px;
+//   height: 90px;
+//   border: none;
+//   cursor: pointer;
+//   transition: border .2s ease;
+//   filter: grayscale(100%);
+//   margin: 0 5px;
+//   transition: all .2s ease;
+//   background: url("fab-photo.png") center;
+//   background-size: cover;
+// }
 
-.fabulous:hover {
-  opacity: 0.5;
-}
+// .fabulous:hover {
+//   opacity: 0.5;
+// }
 
 // form#smileys input[type="radio"].fab {
 //   background: url("https://res.cloudinary.com/turdlife/image/upload/v1492864443/sad_bj1tuj.svg") center;
@@ -182,12 +147,26 @@ svg {
   height: 3em;
 }
 
-
+.smiley-svg-div {
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s;
+}
 
 svg.awful-3d {
   width: 3em;
   height: 3em;
   opacity: 0.8;
+  // display: inline-block;
+    // margin: 0 0.5rem;
+
+    // animation: upAndDown linear infinite alternate-reverse; /* referring directly to the animation's @keyframe declaration */
+    // animation-duration: 2s; /* don't forget to set a duration! */
+  // animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  // animation-duration: 2s;
+  // .animate-bounce {
+  //   animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  //   animation-duration: 2s;
+  // }
 
   .face {
     animation: upAndDown 0.9s linear infinite alternate-reverse;

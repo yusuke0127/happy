@@ -28,10 +28,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { clickSmileyLink } from '../components/smileylink';
-import { smileyClassToggle } from '../components/smiley_selector';
+// import { smileyClassToggle } from '../components/smiley_selector';
+import { smileyAnimate } from '../components/smiley_bounce';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   clickSmileyLink();
-  smileyClassToggle();
+  smileyAnimate();
+  // smileyClassToggle();
 });

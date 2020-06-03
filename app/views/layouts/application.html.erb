@@ -9,15 +9,19 @@
     <meta name="mobile-web-app-capable"  content="yes">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
-    <%= render 'shared/ios_pwa_links' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: false %>
-    <%= javascript_pack_tag 'chartkick' %>
-  </head>
-  <body>
-    <%= render 'shared/flashes' %>
-    <div class="main-container">
-      <%= yield %>
-    </div>
-    <%= render 'shared/navbar' %>
-  </body>
-</html>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+      />
+      <%= render 'shared/ios_pwa_links' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: false %>
+      <%= javascript_pack_tag 'chartkick' %>
+    </head>
+    <body>
+      <%= render 'shared/flashes' %>
+      <div class="main-container">
+        <%= yield %>
+      </div>
+      <%= render 'shared/navbar' %>
+    </body>
+  </html>
