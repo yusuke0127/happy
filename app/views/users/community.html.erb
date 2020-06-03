@@ -14,14 +14,15 @@
     <h4>Timeline</h4>
   </div>
   <div class="card-happenings">
-    <% @moods.each do |mood| %>
+    <% @friends.each do |friend| %>
+    <% if friend.average_mood_for(Date.today) %>
       <div class="card-list-mood">
-        <%= image_tag mood.user.image_url, class: "square-avatar", alt: "avatar-large" %>
+        <%= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
         <div class="mood-info">
-          <p class="time-mood"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></p>
-          <i class="<%= mood_fontawesome(mood.rating) %> mt-2"></i>
+          <p class="time-mood"><%= Date.today.strftime("%B %e") %></p>
+          <i class="<%= mood_fontawesome(friend.average_mood_for(Date.today)) %> mt-2"></i>
           <div class="tags-community">
-            <p><%= mood.activity_list %></p>
+            <p><%= friend.average_mood_for(Date.today) %></p>
           </div>
         </div>
         <div class="timeline-line-heart">
@@ -31,6 +32,7 @@
         </div>
       </div>
       <hr>
+    <% end %>
     <% end %>
   </div>
 </div>
