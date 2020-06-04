@@ -7,41 +7,41 @@
 }
 
 .fab-list {
-  position: absolute;
-  right: -333px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -333px;
+  // bottom: -4px;
   font-size: 14px;
   color: $green;
 }
 
 .happy-list {
-  position: absolute;
-  right: -255px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -255px;
+  // bottom: -4px;
   font-size: 14px;
   color: $blue;
 }
 
 .neutral-list {
-  position: absolute;
-  right: -190px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -190px;
+  // bottom: -4px;
   font-size: 14px;
   color: $yellow;
 }
 
 .meh-list {
-  position: absolute;
-  right: -112px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -112px;
+  // bottom: -4px;
   font-size: 14px;
   color: $red;
 }
 
 .awful-list {
-  position: absolute;
-  right: -46px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -46px;
+  // bottom: -4px;
   font-size: 14px;
   color: $purple;
 }
@@ -622,17 +622,27 @@ svg.fab-3d-community-emoji {
       margin: auto;
       // padding-right: 8px;
     }
+    p.clock {
+      text-align: center;
+      margin-left: 0;
+    }
   }
-
-  div.emotion-line {
+  ///////////
+  .emotion-line, .fab-list, .happy-list, .neutral-list, .meh-list, .awful-list {
     position: relative;
-    left: -64%;
-    top: 21px;
-
+    top: unset;
+    bottom: unset;
+    right: unset;
+    left: unset;
   }
+  .emotion-line {
+    text-align: center;
+  }
+
   // div.smiley-form-container p {
   //   margin-left: -144px;
   // }
-  div#smiley-container {
+  div#smiley-container p.clock {
+
   }
 }
