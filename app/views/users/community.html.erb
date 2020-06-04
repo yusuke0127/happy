@@ -2,24 +2,41 @@
   <div class="community-title">
     <h4>Friends (<%= @friends.count %>)</h4>
   </div>
-  <div class="friend-container">
+  <div class="scrolling-wrapper">
     <% @friends.each do |friend| %>
-      <div class="friend-list">
-        <%= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
-        <%= friend.name %>
+      <div class="card-friend">
+        <%= image_tag friend.image_url, class: "avatar-friend", alt: "avatar-large" %>
+        <p><%= friend.name %></p>
       </div>
     <% end %>
   </div>
+  <hr>
+  <!-- <div class="friend-container">
+    <%# @friends.each do |friend| %>
+      <div class="friend-list">
+        <%#= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
+        <%#= friend.name %>
+      </div>
+    <%# end %>
+  </div> -->
   <div class="community-title">
-    <h4>Friends' mood</h4>
+    <h4>Friend's Mood</h4>
+    <p class="time-mood"><%#= Date.today.strftime("%B %e") %>Today ▾</p>
   </div>
   <div class="card-happenings">
     <% @friends.each do |friend| %>
       <% if friend.average_mood_for(Date.today) %>
         <div class="card-list-mood">
-          <%= image_tag friend.image_url, class: "square-avatar", alt: "avatar-large" %>
+          <%= image_tag friend.image_url, class: "avatar-friend", alt: "avatar-large" %>
           <div class="mood-info">
-            <p class="time-mood"><%= Date.today.strftime("%B %e") %></p>
+            <div class="name-friend">
+              <h4><%= friend.name %></h4>
+            </div>
+            <div class="tags-community">
+              <p>is feeling <%= friend.average_mood_for(Date.today) %></p>
+            </div>
+          </div>
+          <div class="display-mood-emoji">
             <% case friend.average_mood_for(Date.today) %>
             <% when "awful" %>
             <svg class='awful-3d-community-emoji' width='44px' height='44px' viewBox='0 0 44 44' version='1.1' preserveAspectRatio='xMinYMin meet' class='svg-content'>
@@ -104,19 +121,17 @@
           <% else %>
             <i class="fas fa-times"></i>
           <% end %>
-          <div class="tags-community">
-            <p><%= friend.average_mood_for(Date.today) %></p>
-          </div>
         </div>
         <div class="timeline-line-heart">
           <%= link_to "https://line.me/ti/p/sI7Gtrb_Qv" do %>
-          <%#= link_to "https://line.me/R/nv/#{friend.line_id}" do %>
-            <i class="fab fa-line community"></i>
-          <% end %>
+            <%#= link_to "https://line.me/R/nv/#{friend.line_id}" do %>
+              <%= image_tag("line-icon.png", alt: "alttext", class: "line-icon") %>
+              <!-- <i class="fab fa-line community"></i> -->
+            <% end %>
+          </div>
         </div>
-      </div>
-      <hr>
+        <hr>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 </div>

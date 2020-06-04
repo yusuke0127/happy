@@ -1,8 +1,48 @@
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-left: 10px;
+
+  .card-friend {
+    display: inline-block;
+    text-align: center;
+    margin-right: 16px;
+    p {
+      margin-top: 6px;
+      margin-bottom: 0px;
+      font-size: 15px;
+      color: #2b2b2b;
+      font-weight: 500;
+    }
+  }
+}
+
+.name-friend h4 {
+  margin-bottom: 0;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.display-mood-emoji {
+  // margin-bottom: 20px;
+  // margin-left: 40px;
+  position: absolute;
+  right: 60px;
+}
+
+.community-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -12px;
+}
+
+
 .community-container {
-  margin: 0px 16px;
+  margin: 24px 15px;
 }
 .community-title h4 {
-  margin: 24px 36px;
+  margin: 24px 10px;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 16px;
@@ -32,14 +72,14 @@ img.square-avatar {
   background-color: white;
   border-radius: 16px;
   box-shadow: 1px 1px 20px lightgrey;
-  width: 336px;
+  width: 386px;
   margin: 0 auto;
   margin-top: 24px;
 }
 
 .card-list-mood {
   overflow: hidden;
-  height: 120px;
+  height: 90px;
   display: flex;
   align-items: center;
   margin: -10px 20px;
@@ -50,19 +90,28 @@ p.time-mood {
   font-size: 16px;
   opacity: .7;
   color: #222222;
-  position: absolute;
-  right: 0;
-  top: 16px;
+  margin-right: 20px;
+  margin-top: 23px;
+  // position: absolute;
+  // right: 0;
+  // top: 16px;
 }
 
 .card-list-mood .mood-info {
   padding: 16px;
-  margin-top: 16px;
+  // margin-top: 16px;
+  display: grid;
 }
 
 .mood-info i {
   font-size: 56px;
   margin-left: 12px;
+}
+
+.line-icon {
+  width: 48px;
+  opacity: .7;
+  margin-top: -49px;
 }
 
 i.far.fa-heart {
@@ -101,15 +150,18 @@ i.fab.fa-line.community {
 
 .tags-community p {
   font-size: 14px;
-  background: #ECF0F1;
+  // background: #ECF0F1;
   color: #222222;
-  border-radius: 20px;
-  width: fit-content;
-  height: 24px;
-  padding: 1px 12px;
+  // border-radius: 20px;
+  // width: fit-content;
+  // height: 24px;
+  // padding: 1px 12px;
   font-weight: 400;
   opacity: .7;
-  margin-left: 8px;
-  margin-top: 6px;
+  letter-spacing: .3px;
+  margin-bottom: 0;
+  line-height: 24px;
+  // margin-left: 8px;
+  // margin-top: 6px;
 }
 
