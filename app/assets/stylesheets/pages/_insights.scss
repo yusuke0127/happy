@@ -115,7 +115,7 @@
 .reference-rating-year {
   display: grid;
   position: absolute;
-  top: 213px;
+  top: 210px;
   left: 45px;
   i {
     margin-bottom: 35px;
@@ -146,21 +146,51 @@ svg.meh-3d-insights-emoji{
   height: 1em;
   margin-bottom: 42px;
 }
-svg.neutral-3d-insights-emoji{
+svg.neutral-3d-insights-emoji {
   width: 1em;
   height: 1em;
   margin-bottom: 42px;
 
 }
 
-svg.happy-3d-insights-emoji{
+svg.happy-3d-insights-emoji {
  width: 1em;
   height: 1em;
   margin-bottom: 42px;
 }
 
-svg.fab-3d-insights-emoji{
+svg.fab-3d-insights-emoji {
   width: 1em;
   height: 1em;
   margin-bottom: 42px;
+}
+
+svg.awful-3d-insights-emoji-year{
+  width: 1em;
+  height: 1em;
+  margin-bottom: 36px;
+}
+
+svg.meh-3d-insights-emoji-year {
+  width: 1em;
+  height: 1em;
+  margin-bottom: 36px;
+}
+svg.neutral-3d-insights-emoji-year {
+  width: 1em;
+  height: 1em;
+  margin-bottom: 36px;
+
+}
+
+svg.happy-3d-insights-emoji-year {
+ width: 1em;
+  height: 1em;
+  margin-bottom: 36px;
+}
+
+svg.fab-3d-insights-emoji-year {
+  width: 1em;
+  height: 1em;
+  margin-bottom: 36px;
 }
