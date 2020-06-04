@@ -8,7 +8,7 @@ const changeCheckFont = () => {
       const font = document.querySelector('.form-btn-container .form-btn i')
       // const font = event.currentTarget;
       // console.log(font);
-      font.className = 'fas fa-spinner';
+      font.className = 'fas fa-spinner fa-spin';
     })
   }
 }
