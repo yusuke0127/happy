@@ -3,7 +3,7 @@
 
 
 <% @moods.each do |mood| %>
-  <div class="card-product">
+  <div class="card-product show-card">
     <h5 class="text-right mb-0 mt-2 mr-2"><%= mood.created_at.in_time_zone('Asia/Tokyo').strftime("%l:%M %p") %></h5>
     <div class="card-product-infos">
       <div class="emoji">

@@ -7,8 +7,9 @@ class Api::V1::LineBotController < Api::V1::BaseController
   skip_after_action :verify_authorized, only: [:callback]
   def callback
     p @client
-    # binding.pry
+
     body = request.body.read
+    binding.pry
     signature = request.env['HTTP_X_LINE_SIGNATURE']
     unless @client.validate_signature(body, signature)
       error 400 do 'Bad Request' end
