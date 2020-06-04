@@ -13,6 +13,7 @@
   margin-top: 12px;
   font-size: 14px;
   color: $green;
+  opacity: 1!important;
 }
 
 .happy-list {
@@ -22,6 +23,7 @@
   margin-top: 12px;
   font-size: 14px;
   color: $blue;
+  opacity: 1!important;
 }
 
 .neutral-list {
@@ -31,6 +33,7 @@
   margin-top: 12px;
   font-size: 14px;
   color: $yellow;
+  opacity: 1!important;
 }
 
 .meh-list {
@@ -40,6 +43,7 @@
   margin-top: 12px;
   font-size: 14px;
   color: $red;
+  opacity: 1!important;
 }
 
 .awful-list {
@@ -48,7 +52,8 @@
   // bottom: -4px;
   margin-top: 12px;
   font-size: 14px;
-  color: $purple;
+  color: #d29ede;
+  opacity: 1!important;
 }
 
 .new-mood-img {
@@ -544,27 +549,27 @@ svg.fab-3d-card-product {
 
 
 svg.awful-3d-community-emoji {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 svg.meh-3d-community-emoji {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 svg.neutral-3d-community-emoji {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 svg.happy-3d-community-emoji {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 svg.fab-3d-community-emoji {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 /////////////////previous version
 // @media screen and (min-width: 600px) {
