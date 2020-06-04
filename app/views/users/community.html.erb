@@ -109,8 +109,10 @@
           </div>
         </div>
         <div class="timeline-line-heart">
-          <%= link_to "http://line.me/ti/p/~ishida_yu27" do %>
-            <i class="fab fa-line community"></i>
+          <% if friend.line_id%>
+            <%= link_to "https://line.me/R/nv/#{friend.line_id}" do %>
+              <i class="fab fa-line community"></i>
+            <% end %>
           <% end %>
         </div>
       </div>
