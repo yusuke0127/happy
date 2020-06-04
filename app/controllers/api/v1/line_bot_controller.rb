@@ -49,7 +49,8 @@ class Api::V1::LineBotController < Api::V1::BaseController
           @client.reply_message(event['replyToken'], bot_response)
           # sending the sticker replies
           puts "sending sticker"
-          @client.push_message(event['replyToken'], bot_response_sticker)
+          # @client.push_message(event['replyToken'], bot_response_sticker)
+          
         end
       end
     }
