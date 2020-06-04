@@ -10,7 +10,7 @@
     <h1>now?</h1>
   </div>
   <div class="smiley-form-text">
-    <p>
+    <p class="clock">
       <%= (Time.now).in_time_zone('Asia/Tokyo').strftime("%l : %M %P") %>
     </p>
   </div>
@@ -42,6 +42,7 @@
                 </g>
               </svg>
             </div>
+            <p class="awful-list">awful</p>
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -62,6 +63,7 @@
                 </g>
               </svg>
             </div>
+            <p class="meh-list">meh</p>
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -86,6 +88,7 @@
                 </g>
               </svg>
             </div>
+            <p class="neutral-list">neutral</p>
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -113,12 +116,13 @@
                 </g>
               </svg>
             </div>
+            <p class="happy-list">happy</p>
           </label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input radio_buttons optional" type="radio" value="fabulous" name="mood[rating]" id="mood_rating_fabulous">
           <%= link_to "", new_mood_path(rating: 'fabulous'), id: "fabulous-link" %>
-          <label class="form-check-label collection_radio_buttons" for="mood_rating_fabulous">
+          <label class="form-check-label collection_radio_buttons text-center" for="mood_rating_fabulous">
             <div>
               <svg class="fab-3d" width="44px" height="44px" viewBox="0 0 44 44" version="1.1">
                 <g id="fab-3d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0, 0)">
@@ -134,18 +138,11 @@
                 </g>
               </svg>
             </div>
+            <p class="fab-list">fabulous</p>
           </label>
         </div>
       </fieldset>
-      <div class="emotion-line">
-        <ul>
-          <li class="awful-list">awful</li>
-          <li class="meh-list">meh</li>
-          <li class="neutral-list">neutral</li>
-          <li class="happy-list">happy</li>
-          <li class="fab-list">fabulous</li>
-        </ul>
-      </div>
+
     </div>
     <%#= link_to new_mood_path(rating: )  %>
     <%#= @mood %>

@@ -7,41 +7,41 @@
 }
 
 .fab-list {
-  position: absolute;
-  right: -333px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -333px;
+  // bottom: -4px;
   font-size: 14px;
   color: $green;
 }
 
 .happy-list {
-  position: absolute;
-  right: -255px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -255px;
+  // bottom: -4px;
   font-size: 14px;
   color: $blue;
 }
 
 .neutral-list {
-  position: absolute;
-  right: -190px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -190px;
+  // bottom: -4px;
   font-size: 14px;
   color: $yellow;
 }
 
 .meh-list {
-  position: absolute;
-  right: -112px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -112px;
+  // bottom: -4px;
   font-size: 14px;
   color: $red;
 }
 
 .awful-list {
-  position: absolute;
-  right: -46px;
-  bottom: -4px;
+  // position: absolute;
+  // right: -46px;
+  // bottom: -4px;
   font-size: 14px;
   color: $purple;
 }
@@ -561,29 +561,79 @@ svg.fab-3d-community-emoji {
   width: 3em;
   height: 3em;
 }
+/////////////////previous version
+// @media screen and (min-width: 600px) {
+//   .new-mood-img {
+//   width: 45%;
+//   top: -40px;
+//   left: 475px;
+//   }
+//   div.smiley-form-container {
+//     padding-top: 446px;
+//     fieldset {
+//       margin-left: 392px;
+//     }
+//   }
+//   div.emotion-line {
+//     left: 384px;
+//   }
+//   div.smiley-form-container p {
+//     margin-top: 200px;
+//     margin-left: 520px;
+//   }
+//   div#smiley-container {
+//     margin-top: 25px;
+//     margin-left: -345px;
+//   }
+// }
 
 @media screen and (min-width: 600px) {
-  .new-mood-img {
-  width: 45%;
-  top: -40px;
-  left: 475px;
+  div.smiley-form-text p {
+    text-align: center;
+    margin-left: 0;
+    padding-right: 8%;
+  }
+  div.mood-form-question {
+    display: flex;
+    flex-direction: column;
+    width: 216px;
+    margin: 0 auto;
+    padding-left: 16px;
+
   }
   div.smiley-form-container {
-    padding-top: 446px;
+    text-align: center;
+    div.smiley-form-text {
+    width: 216px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+    }
     fieldset {
-      margin-left: 392px;
+      width: 420px;
+      margin: auto;
+      // padding-right: 8px;
+    }
+    p.clock {
+      text-align: center;
+      margin-left: 0;
     }
   }
-  div.emotion-line {
-    left: 384px;
+  ///////////
+  .emotion-line, .fab-list, .happy-list, .neutral-list, .meh-list, .awful-list {
+    position: relative;
+    top: unset;
+    bottom: unset;
+    right: unset;
+    left: unset;
   }
-  div.smiley-form-container p {
-    margin-top: 200px;
-    margin-left: 520px;
+  .emotion-line {
+    text-align: center;
   }
-  div#smiley-container {
-    margin-top: 25px;
-    margin-left: -345px;
+
+  // div.smiley-form-container p {
+  //   margin-left: -144px;
+  // }
+  div#smiley-container p.clock {
+
   }
 }
-
