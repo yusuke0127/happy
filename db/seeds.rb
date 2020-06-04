@@ -54,8 +54,8 @@ puts "Done creating yusuke"
 
 puts ""
 puts "Creating yann"
-url_3 = 'https://api.github.com/users/yannklein'
-yann_serialized = open(url_3).read
+url_4 = 'https://api.github.com/users/yannklein'
+yann_serialized = open(url_4).read
 user_yann = JSON.parse(yann_serialized)
 @yann = User.create!(
   image_url: user_yann['avatar_url'],
@@ -67,8 +67,8 @@ puts "Done creating yann"
 
 puts ""
 puts "Creating doug"
-url_3 = 'https://api.github.com/users/dmbf29'
-doug_serialized = open(url_3).read
+url_5 = 'https://api.github.com/users/dmbf29'
+doug_serialized = open(url_5).read
 user_doug = JSON.parse(doug_serialized)
 @doug = User.create!(
   image_url: user_doug['avatar_url'],
@@ -77,6 +77,32 @@ user_doug = JSON.parse(doug_serialized)
   password: "123456"
 )
 puts "Done creating doug"
+
+puts ""
+puts "Creating trouni"
+url_6 = 'https://api.github.com/users/trouni'
+trouni_serialized = open(url_6).read
+user_trouni = JSON.parse(trouni_serialized)
+@trouni = User.create!(
+  image_url: user_trouni['avatar_url'],
+  name: "Trouni",
+  email: "trouni@gmail.com",
+  password: "123456"
+)
+puts "Done creating trouni"
+
+puts ""
+puts "Creating nicole"
+url_7 = 'https://api.github.com/users/reneos'
+nicole_serialized = open(url_7).read
+user_nicole = JSON.parse(nicole_serialized)
+@nicole = User.create!(
+  image_url: user_nicole['avatar_url'],
+  name: "Nicole",
+  email: "nicolewong@gmail.com",
+  password: "123456"
+)
+puts "Done creating nicole"
 # create friendship
 @pins.friend_request(@katsu)
 @pins.friend_request(@yusuke)
@@ -87,8 +113,12 @@ puts "Done creating doug"
 
 @pins.friend_request(@doug)
 @pins.friend_request(@yann)
+@pins.friend_request(@trouni)
+@pins.friend_request(@nicole)
 @doug.accept_request(@pins)
 @yann.accept_request(@pins)
+@trouni.accept_request(@pins)
+@nicole.accept_request(@pins)
 
 @katsu.friend_request(@doug)
 @katsu.friend_request(@yann)
@@ -215,3 +245,29 @@ puts "Creating mood for today for yann"
   mood_7.save!
 end
 puts "Done creating mood for today for yann"
+
+puts ""
+puts "Creating mood for today for trouni"
+4.times do
+  mood_8 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at:  Date.today
+  )
+  mood_8.user = @trouni
+  mood_8.save!
+end
+puts "Done creating mood for today for trouni"
+
+puts ""
+puts "Creating mood for today for nicole"
+4.times do
+  mood_9 = Mood.new(
+    rating: random_rating.sample,
+    activity_list: activities.sample,
+    created_at:  Date.today
+  )
+  mood_9.user = @nicole
+  mood_9.save!
+end
+puts "Done creating mood for today for nicole"
