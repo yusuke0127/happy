@@ -13,8 +13,9 @@
       <div class="activity-pill">
         <%= f.input :activity_list,
                 as: :check_boxes,
-                collection: ActsAsTaggableOn::Tag.most_used(17).sort_by(&:name),
-                value_method: :name,
+                # collection: ActsAsTaggableOn::Tag.most_used(17).sort_by(&:name),
+                collection: Mood::TOP_ACTIVITIES.sort,
+                # value_method: :name,
                 wrapper: :vertical_collection_inline,
                 label: "",
                 class: "activity-btn"
@@ -41,7 +42,7 @@
   // console.log(this)
   // this.classList.toggle('active')
   //     }
-
+  
   // document.querySelector('.awful-3d').addEventListener('change', classToggle);
   // document.querySelector('.meh-3d').addEventListener('change', classToggle);
   // document.querySelector('.neutral-3d').addEventListener('change', classToggle);
