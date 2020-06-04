@@ -59,6 +59,10 @@
   }
 }
 
+.smiley-form-container p {
+  opacity: 0.6;
+}
+
 // form smiley
 .grayscale { filter: grayscale(100%); }
 form#smileys input[type="radio"] {
