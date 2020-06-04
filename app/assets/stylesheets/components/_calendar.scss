@@ -15,6 +15,7 @@ span.calendar-title {
 .number-emoji-calendar {
   display: grid;
   text-align: center;
+  justify-content: center;
 }
 
 table.table.table-striped {
@@ -23,4 +24,8 @@ table.table.table-striped {
 
 div.simple-calendar {
   margin: 0 auto;
+}
+
+.date-calendar-number {
+  margin-bottom: 4px;
 }
