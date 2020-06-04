@@ -17,7 +17,6 @@ class MoodsController < ApplicationController
     @todays_activities = @moods.map {|mood| mood.activity_list}.flatten
     @friends = current_user.friends
     @message = create_message(@average)
-
   end
 
   def calendar
