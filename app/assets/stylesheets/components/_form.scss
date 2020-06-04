@@ -1,3 +1,14 @@
+.mood-form-question h1 {
+  color: #a8cdcd;
+  text-align: left;
+  font-family: $form-title-font;
+  margin-left: 40px;
+  line-height: 45px;
+}
+
+
+
+
 .activity-pill {
   margin-top: 36px;
   margin-bottom: 36px;
@@ -164,7 +175,7 @@ textarea.form-control {
 
 .smiley-form-container {
   text-align: center;
-  padding-top: 380px;
+  padding-top: 50px;
   .smiley-form-text {
     position: relative;
     margin: 24px;

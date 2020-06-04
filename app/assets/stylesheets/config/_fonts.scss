@@ -18,3 +18,9 @@ $headers-font: "Source Sans Pro", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: "Sequel-Sans-Bold-Head";
+  src: url(asset-path('Sequel-Sans-Bold-Head.ttf')) format('truetype');
+}
+$form-title-font: "Sequel-Sans-Bold-Head"
