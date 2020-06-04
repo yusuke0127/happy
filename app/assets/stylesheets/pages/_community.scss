@@ -10,8 +10,9 @@
 
 .friend-container {
   display: flex;
-  margin: 40px 32px;
+  margin: 40px 46px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 img.square-avatar {
@@ -24,7 +25,7 @@ img.square-avatar {
 .friend-list {
   display: grid;
   justify-items: center;
-  margin-right: 16px;
+  margin-bottom: 10px;
 }
 
 .card-happenings {
