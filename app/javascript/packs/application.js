@@ -31,10 +31,13 @@ import { clickSmileyLink } from '../components/smileylink';
 // import { smileyClassToggle } from '../components/smiley_selector';
 import { smileyAnimate } from '../components/smiley_bounce';
 import { initSelect2 } from '../components/init_select2';
+import { changeCheckFont } from '../components/change_check';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   clickSmileyLink();
   smileyAnimate();
   initSelect2();
+  changeCheckFont();
 });
