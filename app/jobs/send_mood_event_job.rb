@@ -14,7 +14,16 @@ class SendMoodEventJob < ApplicationJob
       type: 'text',
       text: text
     }
+    # sticker message json
+    message_sticker {
+      type: sticker,
+      packageId: '11538',
+      stickerId: '51626496'
+    }
     @client.push_message(user.line_id, message)
+    # send stickers
+    @client.push_message(user.line_id, message_sticker)
+
   end
 end
 
