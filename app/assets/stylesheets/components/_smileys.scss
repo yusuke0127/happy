@@ -570,29 +570,69 @@ svg.fab-3d-community-emoji {
       margin-left: 8px;
 
 }
+/////////////////previous version
+// @media screen and (min-width: 600px) {
+//   .new-mood-img {
+//   width: 45%;
+//   top: -40px;
+//   left: 475px;
+//   }
+//   div.smiley-form-container {
+//     padding-top: 446px;
+//     fieldset {
+//       margin-left: 392px;
+//     }
+//   }
+//   div.emotion-line {
+//     left: 384px;
+//   }
+//   div.smiley-form-container p {
+//     margin-top: 200px;
+//     margin-left: 520px;
+//   }
+//   div#smiley-container {
+//     margin-top: 25px;
+//     margin-left: -345px;
+//   }
+// }
 
 @media screen and (min-width: 600px) {
-  .new-mood-img {
-  width: 45%;
-  top: -40px;
-  left: 475px;
+  div.smiley-form-text p {
+    text-align: center;
+    margin-left: 0;
+    padding-right: 8%;
+  }
+  div.mood-form-question {
+    display: flex;
+    flex-direction: column;
+    width: 216px;
+    margin: 0 auto;
+    padding-left: 16px;
+
   }
   div.smiley-form-container {
-    padding-top: 446px;
+    text-align: center;
+    div.smiley-form-text {
+    width: 216px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+    }
     fieldset {
-      margin-left: 392px;
+      width: 420px;
+      margin: auto;
+      // padding-right: 8px;
     }
   }
+
   div.emotion-line {
-    left: 384px;
+    position: relative;
+    left: -64%;
+    top: 21px;
+
   }
-  div.smiley-form-container p {
-    margin-top: 200px;
-    margin-left: 520px;
-  }
+  // div.smiley-form-container p {
+  //   margin-left: -144px;
+  // }
   div#smiley-container {
-    margin-top: 25px;
-    margin-left: -345px;
   }
 }
-
