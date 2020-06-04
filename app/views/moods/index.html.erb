@@ -10,6 +10,9 @@
       <h5 style="font-weight: 600;">Your Average Mood</h5>
       <%#= image_tag ('chart-1.png'), alt: "alttext", class: 'chart-1' %>
       <div class="encourage-do">
+        <div class="image-rating">
+          <%= render 'shared/image_render', average: @average %>
+        </div>
         <div class="emotion">
           <!-- <p>Average</p> -->
           <!-- <i class="<%#= mood_fontawesome(@average) %>"></i> -->

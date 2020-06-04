@@ -1,0 +1,14 @@
+<% case average %>
+<% when "awful" then %>
+<%= image_tag("rating-0.png", alt: "alttext") %>
+<% when "meh" then %>
+<%= image_tag("rating-1.png", alt: "alttext") %>
+<% when "neutral" then %>
+<%= image_tag("rating-2.png", alt: "alttext") %>
+<% when "happy" then %>
+<%= image_tag("rating-3.png", alt: "alttext") %>
+<% when "fabulous" then %>
+<%= image_tag("rating-4.png", alt: "alttext") %>
+<% else %>
+  <%= image_tag("rating-empty.png", alt: "alttext") %>
+<% end %>
