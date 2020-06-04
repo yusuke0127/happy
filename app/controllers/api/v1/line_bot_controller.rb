@@ -49,7 +49,8 @@ class Api::V1::LineBotController < Api::V1::BaseController
           @client.reply_message(event['replyToken'], bot_response)
           # sending the sticker replies
           puts "sending sticker"
-          @client.reply_message(event['replyToken'], bot_response_sticker)
+          # @client.push_message(event['replyToken'], bot_response_sticker)
+          
         end
       end
     }
@@ -68,24 +69,29 @@ class Api::V1::LineBotController < Api::V1::BaseController
     if user
       user.line_id = params["events"].first["source"]["userId"]
       user.save
-      {
+      message = {
         type: 'text',
         text: "Connected! Line account added to #{email}\n- You can access your acount at http://www.happyyou.xyz/"
       }
       # sticker message
-      {
+      message_sticker = {
         type: 'sticker',
         packageId: '11537',
         stickerId: '52002745'
       }
+      @client.push_message(user.line_id, message)
+      @client.push_message(user.line_id, message_sticker)
+
     else
-      { type: 'text', text: "Sorry. I couldn't find the Happy user with the email of #{email}. Capital letters matter." }
+      message = { type: 'text', text: "Sorry. I couldn't find the Happy user with the email of #{email}. Capital letters matter." }
       # sticker message
-      {
+      message_sticker = {
         type: 'sticker',
         packageId: '11537',
         stickerId: '52002739 '
       }
+      @client.push_message(user.line_id, message)
+      @client.push_message(user.line_id, message_sticker)
     end
   end
 end
