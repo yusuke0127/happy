@@ -11,7 +11,7 @@
     <% end %>
   </div>
   <div class="community-title">
-    <h4>Friends moods for today</h4>
+    <h4>Friends' mood</h4>
   </div>
   <div class="card-happenings">
     <% @friends.each do |friend| %>
@@ -109,11 +109,9 @@
           </div>
         </div>
         <div class="timeline-line-heart">
-          <% if friend.line_id%>
-            <%= link_to "https://line.me/ti/p/sI7Gtrb_Qv" do %>
-            <%#= link_to "https://line.me/R/nv/#{friend.line_id}" do %>
-              <i class="fab fa-line community"></i>
-            <% end %>
+          <%= link_to "https://line.me/ti/p/sI7Gtrb_Qv" do %>
+          <%#= link_to "https://line.me/R/nv/#{friend.line_id}" do %>
+            <i class="fab fa-line community"></i>
           <% end %>
         </div>
       </div>
