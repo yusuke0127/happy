@@ -15,7 +15,7 @@ class SendMessageToPinsJob < ApplicationJob
       text: text
     }
     # sticker message json
-    message_sticker {
+    message_sticker = {
       type: 'sticker',
       packageId: '11537',
       stickerId: '52002745'
