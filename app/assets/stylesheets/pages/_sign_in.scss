@@ -38,5 +38,14 @@ a.nav-link-login {
 }
 
 div.container-login {
-  margin: 80px 40px;
+  // margin: 80px 40px;
+  margin: 0px auto;
+    width: fit-content;
+    margin-top: 24%;
+    h2 {
+    text-align: center;
+    }
+}
+.container-login .form-group {
+  margin: 0px;
 }
