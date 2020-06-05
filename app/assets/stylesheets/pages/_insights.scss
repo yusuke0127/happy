@@ -194,3 +194,18 @@ svg.fab-3d-insights-emoji-year {
   height: 1em;
   margin-bottom: 36px;
 }
+
+ @media screen and (min-width: 600px) {
+  // .form-group {
+  //   display: inline-block;
+  // }
+  .average-container {
+    position: relative;
+  }
+  .reference-rating {
+    display: grid;
+    position: absolute;
+    top: 12px;
+    left: 24px;
+  }
+}
