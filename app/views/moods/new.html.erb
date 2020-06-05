@@ -27,7 +27,7 @@
         # sort_by { |tzinfo| tzinfo.name },
       :name, :name),
       class: 'select2', multiple: 'multiple' %>
-      <%= f.input :note, as: :text, placeholder: 'Add Note...', input_html: { maxlength: 20 }, label: false %>
+      <%= f.input :note, as: :text, placeholder: 'Add Note...', input_html: { maxlength: 20 }, label: false, wrapper_html: { class: 'd-flex justify-content-center' }  %>
       <div class="form-btn-container">
         <%= button_tag :submit, class: 'form-btn' do %>
           <i class="fas fa-check"></i>
@@ -42,7 +42,7 @@
   // console.log(this)
   // this.classList.toggle('active')
   //     }
-  
+
   // document.querySelector('.awful-3d').addEventListener('change', classToggle);
   // document.querySelector('.meh-3d').addEventListener('change', classToggle);
   // document.querySelector('.neutral-3d').addEventListener('change', classToggle);
