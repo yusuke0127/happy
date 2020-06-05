@@ -18,18 +18,21 @@
   }
 }
 
+.status-friend {
+  position: relative;
+}
+
 .name-friend h4 {
   margin-bottom: 0;
   font-size: 21px;
   font-weight: 600;
 }
 
+
 .display-mood-emoji {
-  // margin-bottom: 20px;
-  // margin-left: 40px;
   position: absolute;
-  left: 57px;
-  top: 0px;
+  right: -12px;
+  top: -4px;
 }
 
 .community-title {
@@ -75,27 +78,38 @@ img.square-avatar {
   box-shadow: 1px 1px 20px lightgrey;
   width: 386px;
   margin: 0 auto;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
-.card-happenings > .card-list-mood {
-    height: 100px;
-    padding-top: 10px;
-}
+// .card-happenings > .card-list-mood {
+//     height: 100px;
+//     padding-top: 10px;
+// }
 
-.card-happenings > .card-list-mood ~ .card-list-mood {
-    height: 100px;
-    margin-top: 0px;
-    padding-top: 0px;
-}
+// .card-happenings > .card-list-mood ~ .card-list-mood {
+//     height: 100px;
+//     margin-top: 0px;
+//     padding-top: 0px;
+// }
+
+// .card-list-mood {
+//   overflow: hidden;
+//   height: 90px;
+//   display: flex;
+//   align-items: center;
+//   margin: -10px 20px;
+//   position: relative;
+// }
 
 .card-list-mood {
-  overflow: hidden;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  margin: -10px 20px;
-  position: relative;
+    overflow: hidden;
+    /* height: 90px; */
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    position: relative;
+    padding: 12px 20px;
+    border-bottom: solid .5px lightgray;
 }
 
 p.time-mood {
@@ -153,10 +167,10 @@ i.fab.fa-line.community {
 
 .timeline-line-heart {
   margin-left: auto;
-  margin-top: 28px;
-  display: grid;
+  // margin-top: 28px;
+  // display: grid;
   align-items: center;
-  height: 10px;
+  // height: 10px;
 
 }
 
