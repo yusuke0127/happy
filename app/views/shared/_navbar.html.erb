@@ -24,9 +24,9 @@
       <%= link_to community_path(current_user) do %>
         <i class="fas fa-users"></i>
       <% end %>
-      <%= link_to user_google_oauth2_omniauth_authorize_path do %>
-        <i class="fab fa-google"></i>
-      <% end %>
+      <%#= link_to user_google_oauth2_omniauth_authorize_path do %>
+        <!-- <i class="fab fa-google"></i> -->
+      <%# end %>
       <%= link_to destroy_user_session_path, method: :delete do %>
         <i class="fas fa-power-off"></i>
       <% end %>
@@ -83,7 +83,7 @@
   document.getElementById("mySidebar").style.width = "80px";
   document.getElementById("main").style.marginLeft = "8px";
   }
-  
+
   /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
   function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
