@@ -138,10 +138,12 @@ puts "Done creating friendship"
 # creating moods
 
 activities = %w[family friends date party netflix reading gaming relax sleep eating exercise walk meditation shopping cleaning cooking laundry work shower alcohol traveling hobbies sick movie TV argument social\ media sex]
+pins_activities = %w[coding cleaning netflix date cooking]
+fab_activities = %w[coding cleaning walk shopping sex]
 random_rating = [0, 1, 2, 3, 4]
 bad_rating = [0, 1]
 good_rating = [3, 4]
-average_rating = [2, 3]
+average_rating = [1, 2, 3]
 
 puts ""
 puts "Creating random mood for pins"
@@ -151,24 +153,44 @@ puts "Creating random mood for pins"
     activity_list: activities.sample,
     created_at: (rand*120).days.ago
   )
+  mood_2 = Mood.new(
+    rating: 4,
+    activity_list: 'cleaning',
+    created_at: (rand*120).days.ago
+  )
   mood_1.user = @pins
+  mood_2.user = @pins
   mood_1.save!
+  mood_2.save!
+end
+puts "Done creating random mood for pins"
+
+puts ""
+puts "Creating random mood for pins"
+10.times do
+  mood_2 = Mood.new(
+    rating: 4,
+    activity_list: 'hobbies',
+    created_at: (rand*120).days.ago
+  )
+  mood_2.user = @pins
+  mood_2.save!
 end
 puts "Done creating random mood for pins"
 
 range = (7..14)
 puts ""
-puts "Creating good mood for pins"
+puts "Creating good mood for pins 1 week ago"
 50.times do
   mood_1 = Mood.new(
     rating: average_rating.sample,
-    activity_list: activities.sample,
+    activity_list: pins_activities.sample,
     created_at: (rand(range)).days.ago
   )
   mood_1.user = @pins
   mood_1.save!
 end
-puts "Done creating good mood for pins"
+puts "Done creating good mood for pins 1 week ago"
 
 puts ""
 puts "Creating mood for katsu"
@@ -224,7 +246,7 @@ puts ""
 puts "Creating mood for today for doug"
 4.times do
   mood_6 = Mood.new(
-    rating: random_rating.sample,
+    rating: good_rating.sample,
     activity_list: activities.sample,
     created_at:  Date.today
   )
@@ -237,7 +259,7 @@ puts ""
 puts "Creating mood for today for yann"
 4.times do
   mood_7 = Mood.new(
-    rating: random_rating.sample,
+    rating: good_rating.sample,
     activity_list: activities.sample,
     created_at:  Date.today
   )
@@ -250,7 +272,7 @@ puts ""
 puts "Creating mood for today for trouni"
 4.times do
   mood_8 = Mood.new(
-    rating: random_rating.sample,
+    rating: good_rating.sample,
     activity_list: activities.sample,
     created_at:  Date.today
   )
@@ -263,7 +285,7 @@ puts ""
 puts "Creating mood for today for nicole"
 4.times do
   mood_9 = Mood.new(
-    rating: random_rating.sample,
+    rating: good_rating.sample,
     activity_list: activities.sample,
     created_at:  Date.today
   )
