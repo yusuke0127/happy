@@ -48,8 +48,8 @@ class MoodsController < ApplicationController
       @this_week_mood = Mood.ratings.keys[average_moods_current_week]
     end
 
-    average_moods_last_week = current_user.moods.where(created_at: (last_week)).average(:rating)&.round
-    if average_moods_last_week != nil
+    if current_user.moods.where(created_at: (last_week)).any?
+      average_moods_last_week = current_user.moods.where(created_at: (last_week)).average(:rating)&.round
       @last_week_mood = Mood.ratings.keys[average_moods_last_week]
     end
   end
