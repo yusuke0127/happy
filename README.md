@@ -25,9 +25,9 @@ To be able to record your mood you will have to create an account. You can use a
 ## Team
 <table>
   <thead>
-    <th>Front End Lead</th>
-    <th>Back End Lead</th>
-    <th>Project Manager</th>
+    <th>Full-Stack Developer</th>
+    <th>Full-Stack Developer</th>
+    <th>Full-Stack Developer</th>
   </thead>
   <tbody>
    <tr>
