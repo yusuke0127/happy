@@ -54,8 +54,3 @@ To be able to record your mood you will have to create an account. You can use a
     </tr>
   </tbody>
 </table>
-
-
-## Template
-
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
