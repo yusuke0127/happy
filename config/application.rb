@@ -12,6 +12,11 @@ module Happy
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+      generate.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
