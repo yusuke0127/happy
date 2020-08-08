@@ -1,6 +1,6 @@
 <div class="container-login">
   <div class="nav-top fixed-top">
-    <h6>happy.</h6>
+    <h6><%= link_to "happy.", root_path %></h6>
   </div>
   <h2>Log in</h2>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
